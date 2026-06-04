@@ -183,8 +183,11 @@
       <!-- Chat Dialog Box -->
       <div class="chatbot-dialog glass hidden" id="chatbot-dialog">
         <div class="chatbot-header">
-          <h4>Amir's Assistant Bot</h4>
-          <span class="chatbot-status-dot"></span>
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <span class="chatbot-status-dot"></span>
+            <h4>Amir's Assistant Bot</h4>
+          </div>
+          <span class="chat-dialog-close" onclick="toggleChat()">&times;</span>
         </div>
         <div class="chatbot-messages" id="chatbot-messages">
           <div class="chat-msg bot">Hi there! Ask me any question about Amir's skills, experience, or education. Or choose a quick option below:</div>

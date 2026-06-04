@@ -1061,6 +1061,16 @@ body {
   font-size: 0.95rem;
   color: var(--text-main);
 }
+.chat-dialog-close {
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-sub);
+  transition: color 0.2s ease;
+}
+.chat-dialog-close:hover {
+  color: var(--text-main);
+}
 .chatbot-status-dot {
   width: 8px;
   height: 8px;
