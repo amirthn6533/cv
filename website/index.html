@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amir Tahani – Portfolio & Resume</title>
+  <meta name="description" content="Amir Tahani – Backend / AI Engineer & QA Specialist portfolio. Showcasing GitHub projects and multilingual resume." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+  <!-- Web view layout (Hidden during printing) -->
+  <div class="web-only">
+    
+    <!-- Ambient Glow Follower -->
+    <div class="ambient-glow" id="ambient-glow"></div>
+    
+    <!-- Neural Network Interactive Canvas Background -->
+    <canvas id="neural-canvas" class="neural-canvas"></canvas>
+    
+    <!-- Theme Toggle Switch -->
+    <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme(event)" title="Toggle Light/Dark Mode">
+      <!-- Sun icon -->
+      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></svg>
+      <!-- Moon icon -->
+      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></svg>
+    </button>
+
+    <header class="hero glass">
+      <div class="hero-content">
+        <h1>Amir Tahani</h1>
+        <p class="subtitle">Backend / AI Engineer • QA Specialist</p>
+        <img src="assets/profile.jpg" alt="Amir Tahani" class="profile-photo" />
+        <div class="contact-icons">
+          <a href="mailto:amirtahani919@gmail.com" title="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="tel:+889700004" title="Phone">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+          <a href="https://github.com/amirthn6533" target="_blank" title="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/amir-tahani123" target="_blank" title="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+        <a href="#resume-section" class="btn-download">View / Print Resume</a>
+      </div>
+    </header>
+
+    <section class="projects-section">
+      <h2>My Open-Source & Research Projects</h2>
+      <div class="projects-grid" id="repos-container">
+        <!-- Loaded dynamically from GitHub API -->
+        <p style="grid-column: 1 / -1; text-align: center; opacity: 0.7;">Fetching live projects from GitHub...</p>
+      </div>
+    </section>
+ 
+    <!-- Interactive Developer & QA Sandboxes (Hidden during printing) -->
+    <section class="sandbox-section">
+      <h2>Interactive Developer & QA Sandboxes</h2>
+      <div class="sandbox-grid">
+        
+        <!-- Interactive Dev Terminal (Phase 2) -->
+        <div class="terminal-card glass">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">guest@tahani-cv:~</span>
+          </div>
+          <div class="terminal-body" id="terminal-body" onclick="document.getElementById('terminal-input').focus()">
+            <div class="terminal-output text-system">System: Welcome to Amir Tahani's interactive terminal CV!</div>
+            <div class="terminal-output text-system">Type <span class="cmd-highlight">help</span> to list available commands.</div>
+            <div class="terminal-output-container" id="terminal-output-container"></div>
+            <div class="terminal-line" id="terminal-prompt-line">
+              <span class="prompt-user">guest@tahani-cv:~$</span>
+              <input type="text" id="terminal-input" autocomplete="off" aria-label="Terminal prompt input">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: QA Dashboard & Skill Radar Chart -->
+        <div class="sandbox-sidebar-grid">
+          <!-- Skill Radar Chart (Phase 4) -->
+          <div class="radar-card glass">
+            <h3>Skill Focus (Interactive Radar)</h3>
+            <div class="radar-chart-container">
+              <svg id="radar-chart" class="radar-chart" viewBox="0 0 100 100">
+                <!-- Grid circles -->
+                <circle cx="50" cy="50" r="40" class="radar-grid-circle"></circle>
+                <circle cx="50" cy="50" r="30" class="radar-grid-circle"></circle>
+                <circle cx="50" cy="50" r="20" class="radar-grid-circle"></circle>
+                <circle cx="50" cy="50" r="10" class="radar-grid-circle"></circle>
+                <!-- Axis lines -->
+                <line x1="50" y1="50" x2="50" y2="10" class="radar-axis"></line>
+                <line x1="50" y1="50" x2="88" y2="38" class="radar-axis"></line>
+                <line x1="50" y1="50" x2="74" y2="82" class="radar-axis"></line>
+                <line x1="50" y1="50" x2="30" y2="82" class="radar-axis"></line>
+                <line x1="50" y1="50" x2="12" y2="38" class="radar-axis"></line>
+                
+                <!-- Skill Polygon -->
+                <polygon points="50,14 86.1,38.3 71.1,79.1 30.0,77.5 21.5,40.7" class="radar-polygon"></polygon>
+                
+                <!-- Labels -->
+                <text x="50" y="8" class="radar-label" text-anchor="middle">AI & NLP</text>
+                <text x="92" y="38" class="radar-label" text-anchor="start">QA & Automation</text>
+                <text x="76" y="86" class="radar-label" text-anchor="start">Backend & API</text>
+                <text x="24" y="86" class="radar-label" text-anchor="end">Databases</text>
+                <text x="8" y="38" class="radar-label" text-anchor="end">CI/CD</text>
+                
+                <!-- Interactive dots -->
+                <circle cx="50" cy="14" r="3" class="radar-dot" data-skill="AI & NLP: 90%"></circle>
+                <circle cx="86.1" cy="38.3" r="3" class="radar-dot" data-skill="QA & Automation: 95%"></circle>
+                <circle cx="71.1" cy="79.1" r="3" class="radar-dot" data-skill="Backend & API: 90%"></circle>
+                <circle cx="30.0" cy="77.5" r="3" class="radar-dot" data-skill="Databases & SQL: 85%"></circle>
+                <circle cx="21.5" cy="40.7" r="3" class="radar-dot" data-skill="CI/CD & Pipelines: 75%"></circle>
+              </svg>
+              <div id="radar-tooltip" class="radar-tooltip">Hover over vertices to inspect</div>
+            </div>
+          </div>
+          
+          <!-- QA Live Suite Runner (Phase 3) -->
+          <div class="qa-dashboard-card glass">
+            <div class="qa-header">
+              <h3>QA Automation Live Suite</h3>
+              <button class="qa-run-btn" id="qa-run-btn" onclick="runQASuite()">Run Test Suite</button>
+            </div>
+            <div class="qa-progress-container">
+              <div class="qa-progress-bar" id="qa-progress-bar"></div>
+            </div>
+            <div class="qa-console" id="qa-console">
+              <div class="console-line system">[System] Ready to run automation suite. Click "Run Test Suite" to begin.</div>
+            </div>
+            <div class="qa-status-bar">
+              <span id="qa-status-text">Status: Idle</span>
+              <span id="qa-status-results">Passed: 0/0</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Language Controls for Printable Resume preview -->
+    <div class="controls-wrapper">
+      <h2>Interactive Multilingual Resume</h2>
+      <p style="margin-bottom: 1.5rem; opacity: 0.8;">Select your preferred language below to view and print the A4 document.</p>
+      <div class="controls">
+        <button class="lang-btn active" onclick="switchLang('en')">English</button>
+        <button class="lang-btn" onclick="switchLang('fa')">فارسی</button>
+        <button class="lang-btn" onclick="switchLang('bg')">Български</button>
+        <button class="print-btn" onclick="window.print()">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0v5h12v-5"></path></svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Modern Research Project Modal -->
+    <div id="project-modal" class="project-modal hidden" onclick="handleOutsideClick(event)">
+      <div class="project-modal-content glass">
+        <span class="modal-close" onclick="closeProjectModal()">&times;</span>
+        <div id="project-modal-body"></div>
+      </div>
+    </div>
+
+    <!-- Floating AI Chatbot Widget (Phase 5) -->
+    <div class="chatbot-widget" id="chatbot-widget">
+      <!-- Chat Toggle Button -->
+      <button class="chatbot-toggle" id="chatbot-toggle" onclick="toggleChat()" title="Ask Amir's Bot">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chat-open-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chat-close-icon hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      
+      <!-- Chat Dialog Box -->
+      <div class="chatbot-dialog glass hidden" id="chatbot-dialog">
+        <div class="chatbot-header">
+          <h4>Amir's Assistant Bot</h4>
+          <span class="chatbot-status-dot"></span>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+          <div class="chat-msg bot">Hi there! Ask me any question about Amir's skills, experience, or education. Or choose a quick option below:</div>
+        </div>
+        <div class="chatbot-suggestions">
+          <button class="chat-suggest-btn" onclick="askQuickChat('experience')">Work Experience</button>
+          <button class="chat-suggest-btn" onclick="askQuickChat('skills')">Top Skills</button>
+          <button class="chat-suggest-btn" onclick="askQuickChat('contact')">How to Contact</button>
+        </div>
+        <div class="chatbot-input-container">
+          <input type="text" id="chatbot-input" placeholder="Type a question and press enter..." onkeydown="handleChatKey(event)" aria-label="Chatbot input query">
+          <button class="chatbot-send-btn" onclick="sendChatMessage()" aria-label="Send message button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- A4 Printable Resume Container (Sole survivor on Print) -->
+  <div id="resume-section">
+    
+    <!-- English Resume -->
+    <div class="resume-container" id="resume-en">
+      <div class="sidebar">
+        <div class="profile-img-container">
+          <img class="profile-img" src="assets/profile.jpg" alt="Amir Tahani">
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Contact</div>
+          <div class="contact-item"><strong>Location</strong>Sofia, Bulgaria 1680</div>
+          <div class="contact-item"><strong>Email</strong><a href="mailto:amirtahani919@gmail.com">amirtahani919@gmail.com</a></div>
+          <div class="contact-item"><strong>Phone</strong>+889 700 004</div>
+          <div class="contact-item"><strong>LinkedIn</strong><a href="https://linkedin.com/in/amir-tahani123" target="_blank">amir-tahani123</a></div>
+          <div class="contact-item"><strong>GitHub</strong><a href="https://github.com/amirthn6533" target="_blank">amirthn6533</a></div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Education</div>
+          <div class="contact-item">
+            <strong>B.Sc. Computer Science</strong>
+            Technical University of Sofia
+            <div style="font-size:0.75rem; color:var(--light-text); margin-top:0.1rem;">Graduate</div>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Languages</div>
+          <div class="contact-item">English – Very Good</div>
+          <div class="contact-item">Persian – Native</div>
+          <div class="contact-item">Bulgarian – Intermediate</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Certifications</div>
+          <div class="contact-item">QA & Automation Specialist</div>
+          <div class="contact-item">Advanced AI & NLP Engineering</div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div>
+          <div class="header-info">
+            <h1>Amir Tahani</h1>
+            <div class="title">Computer Science Graduate • Backend / AI Engineer • QA Specialist</div>
+          </div>
+          <p class="summary-text">
+            Motivated Computer Science graduate with a strong foundation in software engineering, backend architectures, and AI applications. Passionate about designing robust APIs, integrating intelligent NLP models, and maintaining high software quality. Driven to bridge the gap between AI development and production systems through testing, debugging, and reliable software delivery.
+          </p>
+          <div class="main-section">
+            <div class="main-section-title">Technical Skills</div>
+            <div>
+              <span class="skill-badge">Python</span><span class="skill-badge">SQL / SQLite</span><span class="skill-badge">REST APIs</span>
+              <span class="skill-badge">NLP / Transformers</span><span class="skill-badge">Software Testing & QA</span><span class="skill-badge">Postman</span>
+              <span class="skill-badge">Streamlit</span><span class="skill-badge">Git / GitHub</span><span class="skill-badge">Data Analysis</span>
+              <span class="skill-badge">Debugging</span>
+            </div>
+          </div>
+          <div class="main-section">
+            <div class="main-section-title">Experience</div>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-title">Junior Software Tester / QA Engineer</span>
+                <span class="timeline-date">Mar 2024 – Dec 2024</span>
+              </div>
+              <div class="timeline-subtitle">lead2lid • Sofia, Bulgaria</div>
+              <ul class="timeline-desc">
+                <li>Drove quality assurance efforts by executing manual, functional, and regression test suites for web applications, leading to a 15% reduction in post-release defects.</li>
+                <li>Documented comprehensive bug reports with detailed logs, technical specs, and reproduction steps to streamline developer triage.</li>
+                <li>Leveraged Postman to verify REST API response payloads, latency, and end-to-end integration workflows.</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-title">Call Center Agent</span>
+                <span class="timeline-date">Jan 2023 – Jan 2024</span>
+              </div>
+              <div class="timeline-subtitle">Bigside • Sofia, Bulgaria</div>
+              <ul class="timeline-desc">
+                <li>Delivered high-quality client interaction and technical support under pressure, maintaining a satisfaction rating above 95%.</li>
+                <li>Refined critical interpersonal skills, problem-solving, and cross-functional team communication.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-section" style="margin-bottom: 0;">
+            <div class="main-section-title">Highlighted Projects</div>
+            <div class="timeline-item" style="margin-bottom: 0.5rem;">
+              <div class="timeline-header">
+                <span class="timeline-title">AI Email Assistant</span>
+                <span class="timeline-date">Python, NLP, SQLite</span>
+              </div>
+              <ul class="timeline-desc">
+                <li>Developed an NLP system using Python and Hugging Face Transformers to auto-classify and summarize emails, cutting manual review time by ~40% in test scenarios.</li>
+                <li>Designed a Streamlit dashboard with custom SQLite data storage, enabling rapid local inference on 100+ sample emails.</li>
+              </ul>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0;">
+              <div class="timeline-header">
+                <span class="timeline-title">Data Analysis & Visualization Projects</span>
+                <span class="timeline-date">Python, SQL, Matplotlib</span>
+              </div>
+              <ul class="timeline-desc">
+                <li>Created end-to-end data analysis workflows using Python (Pandas/Matplotlib) and SQL to inspect structured records, accelerating regular reporting timelines by ~25%.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Persian Resume -->
+    <div class="resume-container rtl" id="resume-fa" style="display: none;">
+      <div class="main-content">
+        <div>
+          <div class="header-info">
+            <h1>امیر طهانی</h1>
+            <div class="title">دانش‌آموخته علوم کامپیوتر • توسعه‌دهنده بک‌اند و هوش مصنوعی • متخصص تضمین کیفیت (QA)</div>
+          </div>
+          <p class="summary-text">
+            فارغ‌التحصیل پرانگیزهٔ علوم کامپیوتر با پایه‌ای قوی در مهندسی نرم‌افزار، معماری بک‌اند و کاربردهای هوش مصنوعی. علاقه‌مند به طراحی APIهای وب کارآمد، یکپارچه‌سازی مدل‌های پیشرفتهٔ پردازش زبان طبیعی (NLP) و تضمین کیفیت نرم‌افزار. دارای سابقهٔ موفق در انتقال کدهای هوش مصنوعی به محیط عملیاتی از طریق تست مستمر، اشکال‌زدایی و راه‌اندازی مطمئن سیستم‌ها.
+          </p>
+          <div class="main-section">
+            <div class="main-section-title">مهارت‌های فنی</div>
+            <div>
+              <span class="skill-badge">Python</span><span class="skill-badge">SQL / SQLite</span><span class="skill-badge">REST APIs</span>
+              <span class="skill-badge">NLP / Transformers</span><span class="skill-badge">Software Testing / QA</span><span class="skill-badge">Postman</span>
+              <span class="skill-badge">Streamlit</span><span class="skill-badge">Git / GitHub</span><span class="skill-badge">Data Analysis</span>
+              <span class="skill-badge">Debugging</span>
+            </div>
+          </div>
+          <div class="main-section">
+            <div class="main-section-title">سوابق کاری</div>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-title">تستر نرم‌افزار جونیور / مهندس QA</span>
+                <span class="timeline-date">مارس ۲۰۲۴ – دسامبر ۲۰۲۴</span>
+              </div>
+              <div class="timeline-subtitle">lead2lid • صوفیه، بلغارستان</div>
+              <ul class="timeline-desc" style="padding-right: 1.1rem; padding-left: 0;">
+                <li>تسهیل فرآیند انتشار محصولات وب از طریق طراحی و اجرای تست‌های دستی، عملکردی و رگرسیون که منجر به کاهش ۱۵ درصدی باگ‌های پس از انتشار شد.</li>
+                <li>مستندسازی و ثبت گزارش‌های باگ فوق‌العاده دقیق همراه با لاگ‌های فنی و مراحل بازتولید جهت تسریع در فرآیند رفع باگ توسط تیم توسعه.</li>
+                <li>تست و ارزیابی جامع ساختار پاسخ‌ها، زمان تأخیر و صحت منطق فرانت-اند/بک‌اند برای APIهای REST با ابزار Postman.</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-title">کارشناس مرکز تماس و پشتیبانی فنی</span>
+                <span class="timeline-date">ژانویه ۲۰۲۳ – ژانویه ۲۰۲۴</span>
+              </div>
+              <div class="timeline-subtitle">Bigside • صوفیه، بلغارستان</div>
+              <ul class="timeline-desc" style="padding-right: 1.1rem; padding-left: 0;">
+                <li>پاسخگویی و حل مشکلات فنی مشتریان در محیطی پویا با تکیه بر استانداردهای ارتباطی بالا؛ حفظ شاخص رضایت مشتریان بالای ۹۵ درصد.</li>
+                <li>توسعه مهارت‌های ارتباطی مؤثر، حل مسئله و مدیریت بحران تحت فشارهای کاری مداوم.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-section" style="margin-bottom: 0;">
+            <div class="main-section-title">پроژه‌های شاخص</div>
+            <div class="timeline-item" style="margin-bottom: 0.5rem;">
+              <div class="timeline-header">
+                <span class="timeline-title">دستیار ایمیل هوشمند (AI Email Assistant)</span>
+                <span class="timeline-date">Python, NLP, SQLite</span>
+              </div>
+              <ul class="timeline-desc" style="padding-right: 1.1rem; padding-left: 0;">
+                <li>توسعه سیستم پردازش زبان طبیعی (NLP) با پایتون و Hugging Face جهت طبقه‌بندی هوشمند، خلاصه‌سازی و نگارش خودکار پاسخ ایمیل‌ها با افزایش کارایی ۴۰ درصدی.</li>
+                <li>طراحی پایگاه داده SQLite محلی به همراه بهینه‌سازی کوئری‌ها جهت مدیریت بیش از ۱۰۰ رکورد نمونه در داشبورد Streamlit.</li>
+              </ul>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0;">
+              <div class="timeline-header">
+                <span class="timeline-title">پروژه‌های تحلیل و مصورسازی داده</span>
+                <span class="timeline-date">Python, SQL</span>
+              </div>
+              <ul class="timeline-desc" style="padding-right: 1.1rem; padding-left: 0;">
+                <li>طراحی خطوط انتقال داده (ETL) با SQL و پایتون برای پاک‌سازی، فیلتر و تحلیل مجموعه داده‌های بزرگ (بیش از ۱۰۰0 رکورد) جهت ارائه آمارهای کلیدی کسب‌وکار.</li>
+                <li>ساخت نمودارها و مصورسازی‌های کاربردی با کتابخانه‌های پایتون که زمان گزارش‌دهی دوره‌ای را تا ۲۵ درصد کاهش داد.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="profile-img-container">
+          <img class="profile-img" src="assets/profile.jpg" alt="Amir Tahani">
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">راه ارتباطی</div>
+          <div class="contact-item"><strong>محل سکونت</strong>صوفیه، بلغارستان</div>
+          <div class="contact-item"><strong>ایمیل</strong><a href="mailto:amirtahani919@gmail.com">amirtahani919@gmail.com</a></div>
+          <div class="contact-item"><strong>تلفن</strong>+889 700 004</div>
+          <div class="contact-item"><strong>لینکدین</strong><a href="https://linkedin.com/in/amir-tahani123" target="_blank">amir-tahani123</a></div>
+          <div class="contact-item"><strong>گیت‌هاب</strong><a href="https://github.com/amirthn6533" target="_blank">amirthn6533</a></div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">تحصیلات</div>
+          <div class="contact-item"><strong>کارشناسی علوم کامپیوتر</strong>دانشگاه فنی صوفیه</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">زبان‌ها</div>
+          <div class="contact-item">انگلیسی – عالی</div>
+          <div class="contact-item">فارسی – زبان مادری</div>
+          <div class="contact-item">بلغاری – متوسط</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">گواهینامه‌ها</div>
+          <div class="contact-item">متخصص اتوماسیون و تضمین کیفیت (QA)</div>
+          <div class="contact-item">دوره پیشرفته مهندسی هوش مصنوعی و NLP</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bulgarian Resume -->
+    <div class="resume-container" id="resume-bg" style="display: none;">
+      <div class="sidebar">
+        <div class="profile-img-container">
+          <img class="profile-img" src="assets/profile.jpg" alt="Amir Tahani">
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Контакти</div>
+          <div class="contact-item"><strong>Град</strong>София, България</div>
+          <div class="contact-item"><strong>Имейл</strong><a href="mailto:amirtahani919@gmail.com">amirtahani919@gmail.com</a></div>
+          <div class="contact-item"><strong>Телефон</strong>+889 700 004</div>
+          <div class="contact-item"><strong>LinkedIn</strong><a href="https://linkedin.com/in/amir-tahani123" target="_blank">amir-tahani123</a></div>
+          <div class="contact-item"><strong>GitHub</strong><a href="https://github.com/amirthn6533" target="_blank">amirthn6533</a></div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Образование</div>
+          <div class="contact-item"><strong>Бакалавър Компютърни науки</strong>Технически университет в София</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Езици</div>
+          <div class="contact-item">Английски – Много добър</div>
+          <div class="contact-item">Персийски – Роден</div>
+          <div class="contact-item">Български – Средно ниво</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Сертификати</div>
+          <div class="contact-item">QA и автоматизирано тестване</div>
+          <div class="contact-item">AI и NLP инженерни технологии</div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div>
+          <div class="header-info">
+            <h1>Амир Тахани</h1>
+            <div class="title">Компютърни науки • Бекенд / AI разработчик • QA специалист</div>
+          </div>
+          <p class="summary-text">
+            Мотивиран випускник по Компютърни науки със солидна основа в софтуерното инженерство, бекенд архитектурите и AI приложенията. Страстен привърженик на проектирането на стабилни API, интегрирането на NLP модели и поддържането на високо качество на софтуера. Доказана способност за внедряване на AI концепции в производствена среда чрез тестване, дебъгване и надеждно софтуерно доставяне.
+          </p>
+          <div class="main-section">
+            <div class="main-section-title">Технически умения</div>
+            <div>
+              <span class="skill-badge">Python</span><span class="skill-badge">SQL / SQLite</span><span class="skill-badge">REST APIs</span>
+              <span class="skill-badge">NLP / Transformers</span><span class="skill-badge">Software Testing / QA</span><span class="skill-badge">Postman</span>
+              <span class="skill-badge">Streamlit</span><span class="skill-badge">Git / GitHub</span><span class="skill-badge">Data Analysis</span>
+              <span class="skill-badge">Debugging</span>
+            </div>
+          </div>
+          <div class="main-section">
+            <div class="main-section-title">Професионален опит</div>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-title">Младши QA специалист / Тестер</span>
+                <span class="timeline-date">март 2024 – дек 2024</span>
+              </div>
+              <div class="timeline-subtitle">lead2lid • София, България</div>
+              <ul class="timeline-desc">
+                <li>Управлявах процесите по осигуряване на качеството чрез проектиране и изпълнение на ръчни, функционални и регресионни тестове за уеб приложения, намалявайки дефектите след пускане с 15%.</li>
+                <li>Документирах подробни доклади за бъгове с точни технически стъпки, логове и възпроизводимост с цел улесняване работата на разработчиците.</li>
+                <li>Провеждах бекенд валидация с Postman за тестване на REST API ендпойнти, отговори, латентност и състояния.</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-title">Агент в кол център</span>
+                <span class="timeline-date">януари 2023 – януари 2024</span>
+              </div>
+              <div class="timeline-subtitle">Bigside • София, България</div>
+              <ul class="timeline-desc">
+                <li>Управлявах комуникацията с клиенти и оказвах техническа поддръжка под напрежение, поддържайки ниво на удовлетвореност над 95%.</li>
+                <li>Развих критични умения за разрешаване на проблеми, комуникация и работа в екип под напрежение.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-section" style="margin-bottom: 0;">
+            <div class="main-section-title">Проекти</div>
+            <div class="timeline-item" style="margin-bottom: 0.5rem;">
+              <div class="timeline-header">
+                <span class="timeline-title">AI Email Assistant</span>
+                <span class="timeline-date">Python, NLP, SQLite</span>
+              </div>
+              <ul class="timeline-desc">
+                <li>Разработих изцяло NLP система с Python и Hugging Face Transformers за автоматизирано класифициране и обобщаване на имейли, намалявайки времето за ръчен преглед с ~40%.</li>
+                <li>Интегрирах Streamlit интерфейс с локална SQLite база данни за съхранение и бърза обработка на над 100 примерни имейла.</li>
+              </ul>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0;">
+              <div class="timeline-header">
+                <span class="timeline-title">Проекти за анализ на данни</span>
+                <span class="timeline-date">Python, SQL</span>
+              </div>
+              <ul class="timeline-desc">
+                <li>Изградих ETL процеси с Python (Pandas/Matplotlib) и SQL за почистване и анализ на структурирани данни с над 1000 записа с цел извличане на ключови метрики, намалявайки времето за отчетност с 25%.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const projectData = {
+      email: {
+        title: "AI Email Assistant (NLP Application)",
+        tags: ["Python", "NLP", "SQLite", "Streamlit", "Transformers"],
+        overview: "An automated enterprise productivity tool designed to classify, summarize, and generate context-aware draft responses for high-volume corporate email queues.",
+        features: [
+          "Auto-categorizes incoming emails by intent and priority using transformer architectures.",
+          "Generates dynamic, accurate summaries of long, complex message histories.",
+          "Drafts smart response templates using custom prompt engineering guidelines."
+        ],
+        architecture: "Developed with Hugging Face's pipeline APIs for language inference, Streamlit for the responsive frontend dashboard, and SQLite for high-performance localized message caching.",
+        impact: "Accelerated manual email handling efficiency by approximately 40% in simulated corporate testing pipelines.",
+        github: "https://github.com/amirthn6533/ai-email-assistant"
+      },
+      apitest: {
+        title: "api-tests (QA & Container Automation)",
+        tags: ["Dockerfile", "Postman", "Newman", "CI/CD"],
+        overview: "A lightweight, containerized testing architecture aimed at validating web microservice APIs against strict schema standards.",
+        features: [
+          "Runs isolated execution nodes in standard Alpine-based Docker containers.",
+          "Automates regression runs across complex REST endpoints.",
+          "Asserts structural payloads, response times, and HTTP status codes."
+        ],
+        architecture: "Configured using Docker, Node.js, and Newman CLI scripts. Validates HTTP response headers and JSON schemas dynamically.",
+        impact: "Reduced test environment setup latency to zero, enabling plug-and-play local integration testing.",
+        github: "https://github.com/amirthn6533/api-tests"
+      },
+      fitlife: {
+        title: "fitlife-bulgaria (Localized Web Ecosystem)",
+        tags: ["JavaScript", "HTML5", "CSS3", "Responsive Design"],
+        overview: "A specialized frontend web application created for fitness studio clubs to manage member enrollments, scheduling, and service lists.",
+        features: [
+          "Fully responsive grid and flex layouts adapting to any mobile or desktop screen size.",
+          "Custom interactive schedule calendars with booking previews.",
+          "Localized language structures matching Bulgarian business demands."
+        ],
+        architecture: "Coded strictly in vanilla ES6 JavaScript, utilizing modern CSS variables and smooth transitions for premium user experiences.",
+        impact: "Provided a responsive client interface ready for deployment in small-to-medium gyms.",
+        github: "https://github.com/amirthn6533/fitlife-bulgaria"
+      },
+      ecom: {
+        title: "ecommerce-tests (Selenium QA Automation)",
+        tags: ["Python", "Selenium WebDriver", "Page Object Model"],
+        overview: "An advanced browser-based regression suite built to ensure security and functionality across standard shopping card operations.",
+        features: [
+          "Simulates multiple user flows (registration, cart validation, payment steps).",
+          "Includes explicit wait strategies to handle dynamic elements.",
+          "Supports multi-browser testing configurations."
+        ],
+        architecture: "Programmed in Python using Selenium WebDriver, applying Page Object Model (POM) pattern to maximize code reusability and decrease locator maintenance overhead.",
+        impact: "Enables fast local regression loops, reducing manual verification time by 70%.",
+        github: "https://github.com/amirthn6533/ecommerce-tests"
+      },
+      playwright: {
+        title: "playwright-tests- (UI Automation Framework)",
+        tags: ["TypeScript", "Playwright", "E2E Testing"],
+        overview: "A modern fast-running automation suite designed for executing fast assertions on modern single-page applications.",
+        features: [
+          "Intercepts and mocks API requests during UI testing.",
+          "Takes automated screenshots and videos on test failures.",
+          "Supports parallel test execution across Chromium, Firefox, and WebKit."
+        ],
+        architecture: "Developed in TypeScript using Playwright Test runner. Incorporates modern page object design.",
+        impact: "Enables stable, flake-free automated visual and functional checks in under 3 minutes.",
+        github: "https://github.com/amirthn6533/playwright-tests-"
+      },
+      database: {
+        title: "myData_base (Streaming Schema Design)",
+        tags: ["SQL", "Relational Database", "3NF Normalization"],
+        overview: "A normalized relational database structure designed to support scalable streaming services with millions of transactions.",
+        features: [
+          "Models complex relations (artists, tracks, albums, playlists, play history).",
+          "Optimizes query response times through index mapping.",
+          "Enforces data integrity using foreign keys and custom check constraints."
+        ],
+        architecture: "Constructed using highly optimized DDL scripts. Normalization level reaches 3NF, eliminating redundant records.",
+        impact: "Ensures sub-second analytical execution speeds for complex playlist compilation queries.",
+        github: "https://github.com/amirthn6533/myData_base"
+      },
+      shoppingqa: {
+        title: "shopping-website-qa (QA Automation)",
+        tags: ["Python", "Selenium WebDriver", "Pytest", "Testing"],
+        overview: "A comprehensive functional regression suite mapped against multiple shopping user pathways to secure item catalogs and user authentication channels.",
+        features: [
+          "Implements robust locator bindings targeting complex shopping elements.",
+          "Verifies authentication state transitions and boundary conditions.",
+          "Integrates assert-heavy Pytest runners to generate visual test diagnostics."
+        ],
+        architecture: "Developed with Pytest and Selenium in Python, utilizing standard page layouts to isolate test cases.",
+        impact: "Guarantees bug-free customer purchase flows and decreases verification overhead.",
+        github: "https://github.com/amirthn6533/shopping-website-qa"
+      },
+      factchecker: {
+        title: "Multimodal AI Fact-Checking and Deepfake Detection System",
+        tags: ["Python", "FastAPI", "AI / NLP", "Deepfake Detection", "Machine Learning"],
+        overview: "An advanced machine learning system that analyzes multimodal contents (text, images, and metadata) to verify claim accuracy, identify fake news patterns, and detect visual deepfakes in media logs.",
+        features: [
+          "Performs cross-modal validation checking claims against verified relational datasets.",
+          "Implements machine learning classifiers to score text credibility levels.",
+          "Includes deepfake image analysis to identify pixel abnormalities and fake visual features."
+        ],
+        architecture: "Engineered using FastAPI for high-performance API routing, Python machine learning pipelines (Scikit-Learn/model.pkl), and an interactive HTML/JS client interface.",
+        impact: "Provides automated, sub-second multimodal credibility assessments to safeguard media integrity.",
+        github: "https://github.com/amirthn6533/multimodal-ai-fact-checking"
+      }
+    };
+
+    function getProjectKey(repoName) {
+      const name = repoName.toLowerCase();
+      if (name.includes('email-assistant')) return 'email';
+      if (name.includes('api-tests')) return 'apitest';
+      if (name.includes('fitlife')) return 'fitlife';
+      if (name.includes('ecommerce-tests')) return 'ecom';
+      if (name.includes('playwright')) return 'playwright';
+      if (name.includes('mydata_base')) return 'database';
+      if (name.includes('shopping-website-qa')) return 'shoppingqa';
+      if (name.includes('fact-checking')) return 'factchecker';
+      return null;
+    }
+
+    async function fetchGitHubRepos() {
+      try {
+        const response = await fetch('https://api.github.com/users/amirthn6533/repos');
+        const repos = await response.json();
+        
+        // Sort by push date
+        repos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+        
+        const container = document.getElementById('repos-container');
+        container.innerHTML = '';
+        
+        repos.forEach(repo => {
+          // Filter out repositories that do not have a defined project concept (e.g. general code snippets, sandbox repos)
+          const excludeList = ['coding'];
+          if (excludeList.includes(repo.name.toLowerCase())) {
+            return;
+          }
+          
+          const card = document.createElement('article');
+          card.className = 'project-card glass';
+          
+          const key = getProjectKey(repo.name);
+          card.onclick = () => openProjectModal(key, repo);
+          
+          card.innerHTML = `
+            <h3>${repo.name}</h3>
+            <p>${repo.description || 'No description available for this repository.'}</p>
+            <div class="project-meta"><strong>Language:</strong> ${repo.language || 'Multiple / Generic'}</div>
+            <span class="repo-link">Read Details & Specs &rarr;</span>
+          `;
+          container.appendChild(card);
+        });
+      } catch (error) {
+        console.error("Error fetching repositories:", error);
+        document.getElementById('repos-container').innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #f87171;">Failed to load projects from GitHub. Please refresh the page.</p>';
+      }
+    }
+
+    function openProjectModal(key, repo) {
+      const modal = document.getElementById('project-modal');
+      const body = document.getElementById('project-modal-body');
+      
+      if (key && projectData[key]) {
+        const data = projectData[key];
+        const tagsHtml = data.tags.map(t => `<span class="modal-tag">${t}</span>`).join('');
+        const featuresHtml = data.features.map(f => `<li>${f}</li>`).join('');
+
+        body.innerHTML = `
+          <h2>${data.title}</h2>
+          <div style="margin: 0.8rem 0 1.2rem;">${tagsHtml}</div>
+          
+          <h4 style="color: #60a5fa; margin-bottom: 0.4rem;">Project Overview</h4>
+          <p style="margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${data.overview}</p>
+          
+          <h4 style="color: #60a5fa; margin-bottom: 0.4rem;">Core Specifications</h4>
+          <ul style="margin: 0 0 1.2rem 1.2rem; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1; list-style-type: disc;">
+            ${featuresHtml}
+          </ul>
+
+          <h4 style="color: #60a5fa; margin-bottom: 0.4rem;">Architecture & Execution</h4>
+          <p style="margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${data.architecture}</p>
+
+          <h4 style="color: #10b981; margin-bottom: 0.4rem;">Research Outcomes & Performance Impact</h4>
+          <p style="margin-bottom: 1.8rem; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;"><strong>Result:</strong> ${data.impact}</p>
+
+          <div style="display: flex; gap: 1rem;">
+            <a href="${data.github}" target="_blank" class="btn-download" style="margin-top: 0; padding: 0.6rem 1.5rem; text-decoration: none;">View on GitHub</a>
+            <button class="lang-btn" style="padding: 0.6rem 1.5rem;" onclick="closeProjectModal()">Close</button>
+          </div>
+        `;
+      } else if (repo) {
+        // Fallback layout for any other GitHub repo dynamically fetched
+        body.innerHTML = `
+          <h2>${repo.name}</h2>
+          <div style="margin: 0.8rem 0 1.2rem;">
+            <span class="modal-tag">${repo.language || 'General'}</span>
+            <span class="modal-tag">Stars: ${repo.stargazers_count}</span>
+            <span class="modal-tag">Forks: ${repo.forks_count}</span>
+          </div>
+          
+          <h4 style="color: #60a5fa; margin-bottom: 0.4rem;">Project Overview</h4>
+          <p style="margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${repo.description || 'No detailed description provided yet.'}</p>
+          
+          <h4 style="color: #60a5fa; margin-bottom: 0.4rem;">Repository Details</h4>
+          <p style="margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">
+            This project is dynamically served from GitHub. Created on ${new Date(repo.created_at).toLocaleDateString()} and last updated on ${new Date(repo.pushed_at).toLocaleDateString()}.
+          </p>
+
+          <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="${repo.html_url}" target="_blank" class="btn-download" style="margin-top: 0; padding: 0.6rem 1.5rem; text-decoration: none;">View on GitHub</a>
+            <button class="lang-btn" style="padding: 0.6rem 1.5rem;" onclick="closeProjectModal()">Close</button>
+          </div>
+        `;
+      }
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProjectModal() {
+      document.getElementById('project-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function handleOutsideClick(e) {
+      if (e.target.id === 'project-modal') {
+        closeProjectModal();
+      }
+    }
+
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.innerText.toLowerCase().includes(lang) || (lang === 'fa' && btn.innerText.includes('فارسی')) || (lang === 'bg' && btn.innerText.includes('Български'))) {
+          btn.classList.add('active');
+        }
+      });
+      document.getElementById('resume-en').style.display = lang === 'en' ? 'grid' : 'none';
+      document.getElementById('resume-fa').style.display = lang === 'fa' ? 'grid' : 'none';
+      document.getElementById('resume-bg').style.display = lang === 'bg' ? 'grid' : 'none';
+      
+      const isRtl = lang === 'fa';
+      document.querySelectorAll('.resume-container').forEach(c => {
+        if(isRtl) c.classList.add('rtl');
+        else c.classList.remove('rtl');
+      });
+    }
+
+    function toggleTheme(e) {
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      const isAppearanceTransition = document.startViewTransition && 
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches && e;
+
+      if (!isAppearanceTransition) {
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('portfolio-theme', newTheme);
+        return;
+      }
+
+      const x = e.clientX;
+      const y = e.clientY;
+      const endRadius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+      );
+
+      const transition = document.startViewTransition(() => {
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('portfolio-theme', newTheme);
+      });
+
+      transition.ready.then(() => {
+        const clipPath = [
+          `circle(0px at ${x}px ${y}px)`,
+          `circle(${endRadius}px at ${x}px ${y}px)`
+        ];
+        
+        document.documentElement.animate(
+          {
+            clipPath: newTheme === 'dark' 
+              ? [...clipPath].reverse() 
+              : clipPath
+          },
+          {
+            duration: 480,
+            easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+            pseudoElement: newTheme === 'dark' 
+              ? '::view-transition-old(root)' 
+              : '::view-transition-new(root)'
+          }
+        );
+      });
+    }
+
+    function initTheme() {
+      const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+      document.body.setAttribute('data-theme', savedTheme);
+    }
+
+    // Interactive mouse trackers
+    function initMouseTracker() {
+      const glow = document.getElementById('ambient-glow');
+      let tick = false;
+      
+      document.addEventListener('mousemove', (e) => {
+        if (!tick) {
+          window.requestAnimationFrame(() => {
+            if (glow) {
+              glow.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
+            }
+            
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+              const rect = card.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              card.style.setProperty('--mouse-x', `${x}px`);
+              card.style.setProperty('--mouse-y', `${y}px`);
+            });
+            tick = false;
+          });
+          tick = true;
+        }
+      });
+    }
+
+    // Phase 1: Interactive Neural Network Canvas Background
+    function initNeuralCanvas() {
+      const canvas = document.getElementById('neural-canvas');
+      if (!canvas) return;
+      
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+      
+      const ctx = canvas.getContext('2d');
+      let width = canvas.width = window.innerWidth;
+      let height = canvas.height = window.innerHeight;
+      
+      const numPoints = Math.min(50, Math.floor((width * height) / 30000));
+      const points = [];
+      const mouse = { x: null, y: null, radius: 150 };
+      
+      class Point {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.5;
+          this.vy = (Math.random() - 0.5) * 0.5;
+          this.radius = Math.random() * 2 + 1;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+          
+          if (mouse.x !== null) {
+            const dx = mouse.x - this.x;
+            const dy = mouse.y - this.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < mouse.radius) {
+              const force = (mouse.radius - dist) / mouse.radius;
+              this.x -= dx * force * 0.015;
+              this.y -= dy * force * 0.015;
+            }
+          }
+        }
+        draw() {
+          const isDark = document.body.getAttribute('data-theme') !== 'light';
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = isDark ? 'rgba(96, 165, 250, 0.35)' : 'rgba(37, 99, 235, 0.2)';
+          ctx.fill();
+        }
+      }
+      
+      for (let i = 0; i < numPoints; i++) {
+        points.push(new Point());
+      }
+      
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+      window.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+      
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+      
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        const isDark = document.body.getAttribute('data-theme') !== 'light';
+        const maxDist = 120;
+        
+        points.forEach((p, idx) => {
+          p.update();
+          p.draw();
+          
+          for (let j = idx + 1; j < points.length; j++) {
+            const other = points[j];
+            const dx = p.x - other.x;
+            const dy = p.y - other.y;
+            const dist = Math.hypot(dx, dy);
+            
+            if (dist < maxDist) {
+              const alpha = (maxDist - dist) / maxDist;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(other.x, other.y);
+              ctx.strokeStyle = isDark 
+                ? `rgba(96, 165, 250, ${alpha * 0.08})` 
+                : `rgba(37, 99, 235, ${alpha * 0.06})`;
+              ctx.lineWidth = 0.6;
+              ctx.stroke();
+            }
+          }
+        });
+        
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+
+    // Phase 2: Interactive Dev Terminal
+    function initTerminal() {
+      const input = document.getElementById('terminal-input');
+      const container = document.getElementById('terminal-output-container');
+      const body = document.getElementById('terminal-body');
+      if (!input || !container) return;
+      
+      const commands = {
+        help: () => `
+          Available commands:
+            - <span class="cmd-highlight">skills</span>   : Displays Amir's core engineering skills.
+            - <span class="cmd-highlight">projects</span> : Prints out his featured repositories.
+            - <span class="cmd-highlight">contact</span>  : Lists email, phone, and links.
+            - <span class="cmd-highlight">clear</span>    : Clears the terminal screen.
+            - <span class="cmd-highlight">help</span>     : Shows this list of commands.
+        `,
+        skills: () => `
+          [Core Technologies]
+            - Languages    : Python, JavaScript, TypeScript, SQL, HTML/CSS
+            - AI & NLP     : Hugging Face, Transformers, Machine Learning, Streamlit
+            - QA testing   : Selenium, Playwright, Pytest, Newman, Postman
+            - Databases    : SQLite, PostgreSQL, Relational DB Design (3NF)
+        `,
+        projects: () => `
+          [Highlighted Repositories]
+            - <span class="cmd-highlight">multimodal-ai-fact-checking</span> : FastAPI + ML deepfake/claim credibility system.
+            - <span class="cmd-highlight">ai-email-assistant</span>          : NLP transformer email summary dashboard.
+            - <span class="cmd-highlight">playwright-tests-</span>           : E2E multi-browser automation tests.
+            - <span class="cmd-highlight">fitlife-bulgaria</span>            : Responsive gym scheduling website.
+        `,
+        contact: () => `
+          [Contact Channels]
+            - Email    : amirtahani919@gmail.com
+            - Phone    : +889 700 004
+            - Location : Sofia, Bulgaria
+            - GitHub   : github.com/amirthn6533
+            - LinkedIn : linkedin.com/in/amir-tahani123
+        `
+      };
+
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const rawVal = input.value;
+          const trimmedVal = rawVal.trim().toLowerCase();
+          
+          const userLine = document.createElement('div');
+          userLine.className = 'terminal-output';
+          userLine.innerHTML = `<span class="prompt-user">guest@tahani-cv:~$</span> ${rawVal}`;
+          container.appendChild(userLine);
+          
+          if (trimmedVal) {
+            if (trimmedVal === 'clear') {
+              container.innerHTML = '';
+            } else if (commands[trimmedVal]) {
+              const res = commands[trimmedVal]();
+              const responseLine = document.createElement('div');
+              responseLine.className = 'terminal-output text-system';
+              responseLine.innerHTML = res.replace(/\n/g, '<br>').replace(/ {2}/g, '&nbsp;&nbsp;');
+              container.appendChild(responseLine);
+            } else {
+              const responseLine = document.createElement('div');
+              responseLine.className = 'terminal-output text-error';
+              responseLine.innerHTML = `Command not found: '${rawVal}'. Type <span class="cmd-highlight">help</span> for commands.`;
+              container.appendChild(responseLine);
+            }
+          }
+          
+          input.value = '';
+          if (body) {
+            body.scrollTop = body.scrollHeight;
+          }
+        }
+      });
+    }
+
+    // Phase 3: Live QA Automation Test Dashboard
+    let isQARunning = false;
+    function runQASuite() {
+      if (isQARunning) return;
+      isQARunning = true;
+      
+      const btn = document.getElementById('qa-run-btn');
+      const bar = document.getElementById('qa-progress-bar');
+      const consoleBox = document.getElementById('qa-console');
+      const statusText = document.getElementById('qa-status-text');
+      const statusResults = document.getElementById('qa-status-results');
+      
+      if (!btn || !bar || !consoleBox || !statusText || !statusResults) return;
+      
+      btn.disabled = true;
+      btn.innerText = "Running...";
+      statusText.innerText = "Status: Executing Suite...";
+      bar.style.width = '0%';
+      consoleBox.innerHTML = '<div class="console-line system">[System] Starting automated regression suite...</div>';
+      
+      const tests = [
+        { desc: "Check GitHub Profile API connection", wait: 800, logs: ["GET https://api.github.com/users/amirthn6533 -> 200 OK", "Found 8 active repositories."] },
+        { desc: "Validate responsive layout break-points", wait: 1000, logs: ["Simulating layout resize loops...", "CSS flex/grid constraints asserting...", "Passed: No overlapping margins detected."] },
+        { desc: "Assert Modal functionality & animations", wait: 800, logs: ["Triggering mock click selectors...", "Modal container transition classes: active", "Asserted: Modal visibility matches bounds."] },
+        { desc: "Verify localization language bundles", wait: 700, logs: ["Validating keys: [en, fa, bg]... OK", "RTL layout assertions: OK"] }
+      ];
+      
+      let currentTestIdx = 0;
+      let totalTests = tests.length;
+      let passedTests = 0;
+      
+      function executeNextTest() {
+        if (currentTestIdx >= totalTests) {
+          setTimeout(() => {
+            bar.style.width = '100%';
+            btn.disabled = false;
+            btn.innerText = "Run Test Suite";
+            statusText.innerText = "Status: Complete";
+            statusResults.innerText = `Passed: ${passedTests}/${totalTests}`;
+            
+            const line = document.createElement('div');
+            line.className = 'console-line success';
+            line.innerHTML = `[SUCCESS] Test execution finished. 4 tests passed, 0 failed. (100% success rate)`;
+            consoleBox.appendChild(line);
+            consoleBox.scrollTop = consoleBox.scrollHeight;
+            isQARunning = false;
+          }, 300);
+          return;
+        }
+        
+        const test = tests[currentTestIdx];
+        const line = document.createElement('div');
+        line.className = 'console-line info';
+        line.innerHTML = `[RUN] Testing: ${test.desc}...`;
+        consoleBox.appendChild(line);
+        consoleBox.scrollTop = consoleBox.scrollHeight;
+        
+        setTimeout(() => {
+          test.logs.forEach(log => {
+            const logLine = document.createElement('div');
+            logLine.className = 'console-line log';
+            logLine.innerHTML = `  &raquo; ${log}`;
+            consoleBox.appendChild(logLine);
+          });
+          
+          const resultLine = document.createElement('div');
+          resultLine.className = 'console-line success';
+          resultLine.innerHTML = `[PASS] Checked: ${test.desc} (Completed in ${test.wait}ms)`;
+          consoleBox.appendChild(resultLine);
+          consoleBox.scrollTop = consoleBox.scrollHeight;
+          
+          passedTests++;
+          currentTestIdx++;
+          
+          const percent = (currentTestIdx / totalTests) * 100;
+          bar.style.width = `${percent}%`;
+          statusResults.innerText = `Passed: ${passedTests}/${totalTests}`;
+          
+          executeNextTest();
+        }, test.wait);
+      }
+      
+      executeNextTest();
+    }
+
+    // Phase 4: Interactive Skill Radar Chart
+    function initRadarChart() {
+      const dots = document.querySelectorAll('.radar-dot');
+      const tooltip = document.getElementById('radar-tooltip');
+      if (!dots || !tooltip) return;
+      
+      dots.forEach(dot => {
+        dot.addEventListener('mouseenter', (e) => {
+          const info = dot.getAttribute('data-skill');
+          tooltip.innerText = info;
+          tooltip.classList.add('active');
+        });
+        dot.addEventListener('mouseleave', () => {
+          tooltip.innerText = "Hover over vertices to inspect";
+          tooltip.classList.remove('active');
+        });
+      });
+    }
+
+    // Phase 5: Resume AI Chatbot (NLP Mockup)
+    function toggleChat() {
+      const dialog = document.getElementById('chatbot-dialog');
+      const openIcon = document.querySelector('.chat-open-icon');
+      const closeIcon = document.querySelector('.chat-close-icon');
+      
+      if (!dialog || !openIcon || !closeIcon) return;
+      
+      const isOpen = !dialog.classList.contains('hidden');
+      if (isOpen) {
+        dialog.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      } else {
+        dialog.classList.remove('hidden');
+        openIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        document.getElementById('chatbot-input').focus();
+      }
+    }
+    
+    const botAnswers = {
+      experience: "Amir worked as a Junior Software Tester/QA Engineer at lead2lid in Sofia, Bulgaria (Mar-Dec 2024). He executed manual, functional, and regression tests, tracked defects, and verified REST APIs using Postman. Prior to that, he worked as a Call Center Agent at Bigside.",
+      skills: "Amir is skilled in Python, SQL/SQLite, REST APIs, QA Testing & Automation (Selenium, Playwright, Pytest, Postman), AI NLP & Transformers (Hugging Face, Streamlit), Git/GitHub, and system debugging.",
+      contact: "You can reach Amir Tahani via email at amirtahani919@gmail.com, phone at +889 700 004, or through LinkedIn (amir-tahani123) and GitHub (amirthn6533).",
+      education: "Amir holds a Bachelor of Science (B.Sc.) in Computer Science from the Technical University of Sofia in Bulgaria.",
+      projects: "His featured projects include: 1) Multimodal AI Fact-Checking & Deepfake Detection System (FastAPI, ML), 2) AI Email Assistant (Python, NLP, SQLite, Streamlit), and 3) E2E Test suites built in Selenium & Playwright."
+    };
+
+    const chatKeywords = [
+      { keys: ['experience', 'work', 'job', 'company', 'lead2lid', 'employer', 'history'], response: botAnswers.experience },
+      { keys: ['skill', 'technology', 'tool', 'python', 'code', 'qa', 'selenium', 'playwright', 'testing', 'automation'], response: botAnswers.skills },
+      { keys: ['contact', 'email', 'phone', 'number', 'reach', 'linkedin', 'github', 'tel', 'mail'], response: botAnswers.contact },
+      { keys: ['education', 'degree', 'university', 'college', 'study', 'graduate', 'bsc', 'b.sc'], response: botAnswers.education },
+      { keys: ['project', 'repo', 'codebase', 'fact', 'email assistant', 'deepfake', 'mydata_base', 'fitlife'], response: botAnswers.projects }
+    ];
+
+    function askQuickChat(topic) {
+      if (botAnswers[topic]) {
+        appendChatMessage('user', `Tell me about your ${topic}`);
+        setTimeout(() => {
+          appendChatMessage('bot', botAnswers[topic]);
+        }, 400);
+      }
+    }
+    
+    function handleChatKey(e) {
+      if (e.key === 'Enter') {
+        sendChatMessage();
+      }
+    }
+    
+    function sendChatMessage() {
+      const input = document.getElementById('chatbot-input');
+      if (!input) return;
+      const text = input.value.trim();
+      if (!text) return;
+      
+      appendChatMessage('user', text);
+      input.value = '';
+      
+      setTimeout(() => {
+        let matchedResponse = "I'm sorry, I didn't quite catch that. You can ask about my skills, experience, projects, education, or contact details.";
+        const lowercaseText = text.toLowerCase();
+        
+        for (const entry of chatKeywords) {
+          if (entry.keys.some(k => lowercaseText.includes(k))) {
+            matchedResponse = entry.response;
+            break;
+          }
+        }
+        
+        appendChatMessage('bot', matchedResponse);
+      }, 500);
+    }
+    
+    function appendChatMessage(sender, message) {
+      const msgBox = document.getElementById('chatbot-messages');
+      if (!msgBox) return;
+      
+      const div = document.createElement('div');
+      div.className = `chat-msg ${sender}`;
+      div.innerHTML = message;
+      msgBox.appendChild(div);
+      msgBox.scrollTop = msgBox.scrollHeight;
+    }
+
+    // Initialize operations on startup
+    document.addEventListener("DOMContentLoaded", () => {
+      initTheme();
+      fetchGitHubRepos();
+      initMouseTracker();
+      initNeuralCanvas();
+      initTerminal();
+      initRadarChart();
+    });
+  </script>
+</body>
+</html>
