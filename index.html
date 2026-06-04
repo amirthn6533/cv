@@ -187,7 +187,7 @@
             <span class="chatbot-status-dot"></span>
             <h4>Amir's Assistant Bot</h4>
           </div>
-          <span class="chat-dialog-close" onclick="toggleChat()">&times;</span>
+          <span class="chat-dialog-close" onclick="closeChat(event)">&times;</span>
         </div>
         <div class="chatbot-messages" id="chatbot-messages">
           <div class="chat-msg bot">Hi there! Ask me any question about Amir's skills, experience, or education. Or choose a quick option below:</div>
@@ -1143,15 +1143,28 @@
       
       const isOpen = !dialog.classList.contains('hidden');
       if (isOpen) {
-        dialog.classList.add('hidden');
-        openIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
+        closeChat();
       } else {
         dialog.classList.remove('hidden');
         openIcon.classList.add('hidden');
         closeIcon.classList.remove('hidden');
         document.getElementById('chatbot-input').focus();
       }
+    }
+
+    function closeChat(e) {
+      if (e) {
+        e.stopPropagation();
+      }
+      const dialog = document.getElementById('chatbot-dialog');
+      const openIcon = document.querySelector('.chat-open-icon');
+      const closeIcon = document.querySelector('.chat-close-icon');
+      
+      if (!dialog || !openIcon || !closeIcon) return;
+      
+      dialog.classList.add('hidden');
+      openIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
     }
     
     const botAnswers = {
