@@ -482,9 +482,14 @@ body {
 
 /* Custom print layout rules */
 @media print {
+  @page {
+    margin: 0 !important;
+    size: A4;
+  }
   body {
     background: none !important;
     padding: 0 !important;
+    margin: 0 !important;
     min-height: 100vh;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -500,10 +505,32 @@ body {
   .resume-container {
     width: 210mm;
     height: 297mm;
+    max-height: 297mm;
     box-shadow: none;
     border-radius: 0;
+    overflow: hidden;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+  
+  /* Compact print spacings to guarantee single-page fitting */
+  .sidebar {
+    padding: 1.5rem 1rem !important;
+  }
+  .main-content {
+    padding: 1.8rem !important;
+  }
+  .sidebar-section {
+    margin-bottom: 1.2rem !important;
+  }
+  .main-section {
+    margin-bottom: 0.9rem !important;
+  }
+  .timeline-item {
+    margin-bottom: 0.6rem !important;
+  }
+  .summary-text {
+    margin-bottom: 0.9rem !important;
   }
 }
 
