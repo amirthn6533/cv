@@ -550,7 +550,7 @@ body {
   padding: 1.5rem;
   transition: opacity 0.3s ease;
 }
-.project-modal.hidden {
+.hidden {
   display: none !important;
 }
 .project-modal-content {

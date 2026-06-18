@@ -655,7 +655,7 @@
         
         repos.forEach(repo => {
           // Filter out repositories that do not have a defined project concept (e.g. general code snippets, sandbox repos)
-          const excludeList = ['coding'];
+          const excludeList = ['coding', 'cv', 'mydata_base', 'api-tests', 'ecommerce-tests', 'shopping-website-qa'];
           if (excludeList.includes(repo.name.toLowerCase())) {
             return;
           }
