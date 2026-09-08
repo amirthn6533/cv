@@ -1,7 +1,8 @@
-﻿# 📄 Amir Tahani | Software Engineer & QA Portfolio Website
+# 📄 Amir Tahani | Software Engineer & QA Portfolio Website
 
 <div align="center">
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-brightgreen?style=for-the-badge&logo=github)](https://amirthn6533.github.io/cv/)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -9,7 +10,9 @@
 
 **Personal portfolio, software engineering profile, and interactive curriculum vitae for Amir Tahani.**
 
-[Overview](#-overview) • [Sections](#-portfolio-sections) • [Quick Start](#-quick-start) • [License](#-license)
+🔗 **[View Live Portfolio Website](https://amirthn6533.github.io/cv/)**
+
+[Live Demo](https://amirthn6533.github.io/cv/) • [Overview](#-overview) • [Sections](#-portfolio-sections) • [Quick Start](#-quick-start) • [License](#-license)
 
 </div>
 
