@@ -11,21 +11,22 @@ SAP Bulgaria (SAP Labs Bulgaria)
 Hiring Team
 Sofia, Bulgaria
 
-Subject: Application for Junior Software Engineer / QA Automation Engineer / SAP iXP Intern
+Subject: Application for Junior Software Engineer / QA Automation Engineer / SAP iXP Intern - AI Programs (Job ID: 453637)
 
 Dear Hiring Team at SAP Labs Bulgaria,
 
-I am writing to express my strong enthusiasm for joining SAP Labs Bulgaria in Sofia. As a Computer Science graduate from the Technical University of Sofia with a strong foundation in backend development, QA automation, and accessibility testing (a11y), I have actively demonstrated my commitment to software excellence—including direct contributions to SAP's own open-source technologies.
+I am writing to express my strong enthusiasm for joining SAP Labs Bulgaria in Sofia. As a Computer Science graduate from the Technical University of Sofia with a focus on artificial intelligence, backend engineering, and software quality assurance, I have actively demonstrated my alignment with SAP's technologies by contributing directly to SAP's official open-source repositories:
 
-Recently, I contributed to SAP Labs Bulgaria's flagship project, **UI5 Web Components** (`SAP/ui5-webcomponents`), authoring **PR #14245** to resolve an axe-core and AccessContinuum WAI-ARIA violation on `UploadCollectionItem` (Issue #14235). In this pull request, I prevented invalid `aria-selected` attributes from rendering on `role="listitem"`, verified accessibility tree mappings, and added Cypress test coverage.
+- **SAP AI Core SDK (`SAP/ai-sdk-js` - PR #2520):** Implemented unified credential loading and environment variable aliasing (`AICORE_BASE_URL` & `AICORE_AUTH_URL`) matching the Python SDK and `~/.aicore/config.json` resolution (Issue #1770), accompanied by full Vitest unit test coverage.
+- **SAP UI5 Web Components (`SAP/ui5-webcomponents` - PR #14245):** Resolved a critical WAI-ARIA accessibility compliance violation on `UploadCollectionItem` (Issue #14235), ensuring clean screen reader compatibility and adding Cypress regression test coverage.
 
 My technical background and professional journey combine software development, quality engineering, and client-facing communication:
-- **Direct Open-Source Impact:** In addition to contributing to SAP UI5 Web Components, I have submitted 5 pull requests to enterprise OSS platforms (e.g., Controlvar) spanning Python/FastAPI backend logic, TypeScript, Jest, Tailwind CSS, and WCAG/a11y audits.
+- **Direct Open-Source Impact:** In addition to contributing to SAP's AI and UI5 codebases, I have submitted 5 pull requests to enterprise OSS platforms (e.g., Controlvar) spanning Python/FastAPI backend logic, TypeScript, Jest, Tailwind CSS, and WCAG/a11y audits.
 - **QA & Automation Mindset:** As a Junior QA Engineer at lead2lid in Sofia, I executed functional, API, and regression test suites, leading to a 15% reduction in release defects. I have also built end-to-end automation suites using Playwright, TypeScript, and CI/CD pipelines.
 - **Applied AI & Backend Engineering:** I engineered a Multimodal AI Fact-Checking and Deepfake Detection System using FastAPI and Machine Learning, as well as an AI Productivity Suite using Hugging Face Transformers and SQLite.
 - **Customer Centricity & Communication:** My experience as a Support / Call Center Agent at Bigside in Sofia honed my interpersonal communication, analytical problem-solving, and ability to handle technical queries effectively.
 
-SAP Labs Bulgaria is renowned for engineering excellence and impactful enterprise software. Having already engaged with your codebase and coding standards, I am eager to bring my enthusiasm, testing diligence, and engineering skills to your engineering team in Sofia.
+SAP Labs Bulgaria is renowned for engineering excellence and impactful enterprise software. Having already engaged with your codebase and coding standards across both AI Core and UI5, I am eager to bring my enthusiasm, testing diligence, and engineering skills to your engineering team in Sofia.
 
 Thank you for your time and consideration. I would welcome the opportunity to interview and discuss how I can contribute to SAP's ongoing success.
 
