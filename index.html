@@ -734,6 +734,21 @@
 
   <script>
     const projectData = {
+      spendguard: {
+        title: "SpendGuard (High-Precision Token Budget & Latency Guard for LLMs)",
+        tags: ["Python 3.10-3.13", "AI Infrastructure", "IEEE-754", "Zero-Dependency", "Circuit Breakers"],
+        overview: "A zero-dependency, microsecond-latency token budget guard, floating-point spend tracker, and latency circuit breaker for production LLM applications.",
+        features: [
+          "Prevents IEEE-754 precision underflow (-2.7e-17) during budget reset decrements using epsilon clamping.",
+          "Enforces hard multi-tenant budget ceilings across API keys, users, and teams with sub-microsecond overhead.",
+          "Includes 3-state latency circuit breakers (CLOSED, OPEN, HALF_OPEN) to fast-fail before eating downstream quota.",
+          "Ships with an interactive CLI (cost estimator, built-in model directory, live budget simulation)."
+        ],
+        architecture: "Pure Python standard library implementation with Decimal math, thread-safe RLock concurrency, and full GitHub Actions CI across Python 3.10-3.13.",
+        impact: "Guarantees zero database schema validation crashes and prevents runaway LLM agent loops from exceeding budget ceilings.",
+        github: "https://github.com/amirthn6533/spendguard"
+      },
+
       email: {
         title: "AI Email Assistant (NLP Application)",
         tags: ["Python", "NLP", "SQLite", "Streamlit", "Transformers"],
@@ -894,6 +909,7 @@
 
     function getProjectKey(repoName) {
       const name = repoName.toLowerCase();
+      if (name.includes('spendguard')) return 'spendguard';
       if (name.includes('email-assistant')) return 'email';
       if (name.includes('job-assistant')) return 'jobassistant';
       if (name.includes('zvb-radar')) return 'zvbradar';
