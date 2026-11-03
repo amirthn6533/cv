@@ -440,6 +440,461 @@
           <div class="main-section" style="margin-bottom: 0;">
             <div class="main-section-title">Core Open-Source & Enterprise Contributions</div>
             <div class="timeline-item" style="margin-bottom: 0.35rem;">
+                            <div class="timeline-header">
+                <span class="timeline-title">NASA EOSDIS & Earth Science (nasa/earthdata-search) &mdash; Hat-Trick (3 PRs)</span>
+                <span class="timeline-date">PR #2113, #2114 & #2115 &bull; Playwright E2E &bull; React &bull; Vitest</span>
+              </div>
+              <ul class="timeline-desc">
+                <li><strong>PR #2115 (Issue #1544 / EDSC-3314):</strong> Directly resolved ticket authored by NASA Core Maintainer Matthew Crouch &mdash; displaying disabled Explore button with accessible tooltip when UMM-T smart handoff parameters are unsatisfied.</li>
+                <li><strong>PR #2113 (Issue #2103) & PR #2114 (Issue #2104):</strong> Resolved polar satellite projection zoom=0 reset bug and map overlays URL state drop bug when all layers are disabled via nullish coalescing parameter retention.</li>
+                <li>Shipped comprehensive Vitest unit test coverage and automated <strong>Playwright E2E</strong> browser tests for mission-critical satellite telemetry views.</li>
+              </ul>
+              <div class="timeline-links">
+                <a href="https://github.com/nasa/earthdata-search/pull/2115" target="_blank" rel="noopener">PR #2115 (Disabled Explore)</a> &middot;
+                <a href="https://github.com/nasa/earthdata-search/pull/2113" target="_blank" rel="noopener">PR #2113 (Map Zero Zoom)</a> &middot;
+                <a href="https://github.com/nasa/earthdata-search/pull/2114" target="_blank" rel="noopener">PR #2114 (Map Overlays None)</a>
+              </div>TYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amir Tahani – Portfolio & Resume</title>
+  <meta name="description" content="Amir Tahani – Backend / AI Engineer & QA Specialist portfolio. Showcasing GitHub projects and multilingual resume." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+  <!-- Web view layout (Hidden during printing) -->
+  <div class="web-only">
+    
+    <!-- Ambient Glow Follower -->
+    <div class="ambient-glow" id="ambient-glow"></div>
+    
+    <!-- Neural Network Interactive Canvas Background -->
+    <canvas id="neural-canvas" class="neural-canvas"></canvas>
+    
+    <!-- Theme Toggle Switch -->
+    <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme(event)" title="Toggle Light/Dark Mode">
+      <!-- Sun icon -->
+      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></svg>
+      <!-- Moon icon -->
+      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></svg>
+    </button>
+
+    <header class="hero glass">
+      <div class="hero-content">
+        <h1>Amir Tahani</h1>
+        <p class="subtitle">Backend / AI Engineer • QA Specialist</p>
+        <img src="assets/profile.jpg" alt="Amir Tahani" class="profile-photo" />
+        <div class="contact-icons">
+          <a href="mailto:amirthn653381@gmail.com" title="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="tel:+359889700004" title="Phone">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+          <a href="https://github.com/amirthn6533" target="_blank" title="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/amir-tahani123" target="_blank" title="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://amirthn6533.github.io/cv/" target="_blank" title="Portfolio / Website">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </a>
+        </div>
+        <a href="#resume-section" class="btn-download">View / Print Resume</a>
+      </div>
+    </header>
+
+        <!-- Enterprise Open-Source & Ecosystem Highlights -->
+    <section class="projects-section" style="margin-bottom: 3.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 1.5rem; gap: 0.5rem;">
+        <h2 style="margin-bottom: 0;">🏆 Enterprise Open-Source & Core Infrastructure Contributions</h2>
+        <span style="font-size: 0.88rem; color: #60a5fa; font-weight: 500;">SpendGuard (PyPI v0.1.0), NASA, LiteLLM (19k★) & SAP Labs Bulgaria</span>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Card 0: SpendGuard on PyPI -->
+        <article class="project-card glass" style="cursor: default;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+              <span class="modal-tag" style="background: rgba(16, 185, 129, 0.18); color: #34d399; border-color: rgba(16, 185, 129, 0.3); margin: 0;">PyPI Official Package</span>
+              <span style="font-size: 0.75rem; color: #38bdf8; font-weight: 600; background: rgba(14, 165, 233, 0.12); padding: 0.2rem 0.6rem; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.25);">v0.1.0 Live on PyPI 📦</span>
+            </div>
+            <h3 style="margin: 0.4rem 0; font-size: 1.15rem; color: var(--text-main);">spendguard-ai: Precision Budget Guard & Circuit Breaker</h3>
+            <p style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; margin: 0.6rem 0 1rem;">
+              Zero-dependency, sub-microsecond token budget guard, floating-point spend tracking & latency circuit breakers for OpenAI, LiteLLM, Anthropic & DeepSeek. Published globally on PyPI.
+            </p>
+            <div style="margin-bottom: 1rem;">
+              <span class="modal-tag">pip install spendguard-ai</span>
+              <span class="modal-tag">Python 3.10-3.13</span>
+              <span class="modal-tag">IEEE-754</span>
+              <span class="modal-tag">Zero-Dep</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--card-border-web); padding-top: 0.8rem;">
+            <span style="font-size: 0.8rem; color: var(--text-sub);">pip install spendguard-ai</span>
+            <a href="https://pypi.org/project/spendguard-ai/" target="_blank" style="color: #34d399; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+              View on PyPI &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 1: LiteLLM -->
+        <article class="project-card glass" style="cursor: default;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+              <span class="modal-tag" style="background: rgba(147, 51, 234, 0.18); color: #c084fc; border-color: rgba(147, 51, 234, 0.3); margin: 0;">BerriAI / LiteLLM (19k★)</span>
+              <span style="font-size: 0.75rem; color: #34d399; font-weight: 600; background: rgba(16, 185, 129, 0.12); padding: 0.2rem 0.6rem; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.25);">CI & Veria AI Passed 🚀</span>
+            </div>
+            <h3 style="margin: 0.4rem 0; font-size: 1.15rem; color: var(--text-main);">PR #49870: Fix Spend Reset Negative Precision Underflow</h3>
+            <p style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; margin: 0.6rem 0 1rem;">
+              Resolved IEEE-754 precision underflow (<code style="color: #f43f5e;">-2.7e-17</code>) occurring on periodic spend resets across Verification Tokens, Users, and Teams. Implemented unit-of-work queue clamping and Pydantic schema validation.
+            </p>
+            <div style="margin-bottom: 1rem;">
+              <span class="modal-tag">Python</span>
+              <span class="modal-tag">PostgreSQL</span>
+              <span class="modal-tag">Prisma</span>
+              <span class="modal-tag">Pydantic</span>
+              <span class="modal-tag">Pytest</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--card-border-web); padding-top: 0.8rem;">
+            <span style="font-size: 0.8rem; color: var(--text-sub);">Issue #49842</span>
+            <a href="https://github.com/BerriAI/litellm/pull/49870" target="_blank" style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+              View PR #49870 &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2: SAP Labs Bulgaria / UI5 Web Components -->
+        <article class="project-card glass" style="cursor: default;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+              <span class="modal-tag" style="background: rgba(14, 165, 233, 0.18); color: #38bdf8; border-color: rgba(14, 165, 233, 0.3); margin: 0;">SAP Labs Bulgaria</span>
+              <span style="font-size: 0.75rem; color: #34d399; font-weight: 600; background: rgba(16, 185, 129, 0.12); padding: 0.2rem 0.6rem; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.25);">PR #14258 APPROVED &bull; PR #14259 OPEN &#127881;</span>
+            </div>
+            <h3 style="margin: 0.4rem 0; font-size: 1.15rem; color: var(--text-main);">UI5 Core: Lifecycle Timing & Accessibility</h3>
+            <p style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; margin: 0.6rem 0 1rem;">
+              Fixed Popup lifecycle timing bug approved by Sofia Core Lead @TeodorTaushanov (PR #14258). Resolved TreeItemCustom ARIA setsize bug (#14239) diagnosed with Senior Dev @GDamyanov, ensuring accurate screen reader tree semantics (PR #14259).
+            </p>
+            <div style="margin-bottom: 1rem;">
+              <span class="modal-tag">TypeScript</span>
+              <span class="modal-tag">Web Components</span>
+              <span class="modal-tag">WAI-ARIA</span>
+              <span class="modal-tag">Cypress</span>
+              <span class="modal-tag">SAP Fiori</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--card-border-web); padding-top: 0.8rem; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="https://github.com/UI5/webcomponents/pull/14258" target="_blank" style="color: #34d399; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+              PR #14258 (Approved) &rarr;
+            </a>
+            <a href="https://github.com/UI5/webcomponents/pull/14259" target="_blank" style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+              PR #14259 (Tree ARIA) &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3: SAP AI Core & LangChain -->
+        <article class="project-card glass" style="cursor: default;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+              <span class="modal-tag" style="background: rgba(14, 165, 233, 0.18); color: #38bdf8; border-color: rgba(14, 165, 233, 0.3); margin: 0;">SAP / ai-sdk-js</span>
+              <span style="font-size: 0.75rem; color: #fbbf24; font-weight: 600; background: rgba(245, 158, 11, 0.12); padding: 0.2rem 0.6rem; border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.25);">Co-authored by Maintainer @marikaner 🚀</span>
+            </div>
+            <h3 style="margin: 0.4rem 0; font-size: 1.15rem; color: var(--text-main);">PR #2524: Reasoning Models max_completion_tokens</h3>
+            <p style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; margin: 0.6rem 0 1rem;">
+              Engineered first-class support for <code style="color: #38bdf8;">max_completion_tokens</code> in Azure OpenAI client and LangChain integration, unblocking OpenAI reasoning models (<code style="color: #a855f7;">o1</code>, <code style="color: #a855f7;">o3-mini</code>).
+            </p>
+            <div style="margin-bottom: 1rem;">
+              <span class="modal-tag">TypeScript</span>
+              <span class="modal-tag">LangChain</span>
+              <span class="modal-tag">SAP AI Core</span>
+              <span class="modal-tag">Azure OpenAI</span>
+              <span class="modal-tag">o1 / o3</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--card-border-web); padding-top: 0.8rem;">
+            <span style="font-size: 0.8rem; color: var(--text-sub);">Issue #1174</span>
+            <a href="https://github.com/SAP/ai-sdk-js/pull/2524" target="_blank" style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+              View PR #2524 &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 4: Cognee AI Community -->
+        <article class="project-card glass" style="cursor: default;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+              <span class="modal-tag" style="background: rgba(244, 63, 94, 0.18); color: #fb7185; border-color: rgba(244, 63, 94, 0.3); margin: 0;">topoteretes / cognee (8k★)</span>
+              <span style="font-size: 0.75rem; color: #38bdf8; font-weight: 600; background: rgba(14, 165, 233, 0.12); padding: 0.2rem 0.6rem; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.25);">5 Connectors &bull; 80+ Tests 🟢</span>
+            </div>
+            <h3 style="margin: 0.4rem 0; font-size: 1.15rem; color: var(--text-main);">PRs #612–#616: Enterprise Ecosystem Graph Ingestion</h3>
+            <p style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; margin: 0.6rem 0 1rem;">
+              Architected 5 standalone knowledge graph connectors for Ansible Infrastructure, Excalidraw Visual Diagrams, Hex.pm BEAM, Crates.io Rust, and DigitalOcean Cloud with automated test suites.
+            </p>
+            <div style="margin-bottom: 1rem;">
+              <span class="modal-tag">Python</span>
+              <span class="modal-tag">Knowledge Graph</span>
+              <span class="modal-tag">NetworkX</span>
+              <span class="modal-tag">FastAPI</span>
+              <span class="modal-tag">Pytest</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--card-border-web); padding-top: 0.8rem;">
+            <span style="font-size: 0.8rem; color: var(--text-sub);">Issues #6490, #6467, #6484</span>
+            <a href="https://github.com/topoteretes/cognee-community/pulls/amirthn6533" target="_blank" style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+              View Connectors &rarr;
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <h2>Personal Projects & Applications</h2>
+      <div class="projects-grid" id="repos-container">
+        <!-- Loaded dynamically from GitHub API -->
+        <p style="grid-column: 1 / -1; text-align: center; opacity: 0.7;">Fetching live projects from GitHub...</p>
+      </div>
+    </section>
+ 
+    <!-- Interactive Developer & QA Sandboxes (Hidden during printing) -->
+    <section class="sandbox-section">
+      <h2>Interactive Developer & QA Sandboxes</h2>
+      <div class="sandbox-grid">
+        
+        <!-- Interactive Dev Terminal (Phase 2) -->
+        <div class="terminal-card glass">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">guest@tahani-cv:~</span>
+          </div>
+          <div class="terminal-body" id="terminal-body" onclick="document.getElementById('terminal-input').focus()">
+            <div class="terminal-output text-system">System: Welcome to Amir Tahani's interactive terminal CV!</div>
+            <div class="terminal-output text-system">Type <span class="cmd-highlight">help</span> to list available commands.</div>
+            <div class="terminal-output-container" id="terminal-output-container"></div>
+            <div class="terminal-line" id="terminal-prompt-line">
+              <span class="prompt-user">guest@tahani-cv:~$</span>
+              <input type="text" id="terminal-input" autocomplete="off" aria-label="Terminal prompt input">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: QA Dashboard & Skill Radar Chart -->
+        <div class="sandbox-sidebar-grid">
+          <!-- Skill Radar Chart (Phase 4) -->
+          <div class="radar-card glass">
+            <h3>Skill Focus (Interactive Radar)</h3>
+            <div class="radar-chart-container">
+              <svg id="radar-chart" class="radar-chart" viewBox="0 0 100 100">
+                <!-- Grid circles -->
+                <circle cx="50" cy="50" r="40" class="radar-grid-circle"></circle>
+                <circle cx="50" cy="50" r="30" class="radar-grid-circle"></circle>
+                <circle cx="50" cy="50" r="20" class="radar-grid-circle"></circle>
+                <circle cx="50" cy="50" r="10" class="radar-grid-circle"></circle>
+                <!-- Axis lines -->
+                <line x1="50" y1="50" x2="50" y2="10" class="radar-axis"></line>
+                <line x1="50" y1="50" x2="88" y2="38" class="radar-axis"></line>
+                <line x1="50" y1="50" x2="74" y2="82" class="radar-axis"></line>
+                <line x1="50" y1="50" x2="30" y2="82" class="radar-axis"></line>
+                <line x1="50" y1="50" x2="12" y2="38" class="radar-axis"></line>
+                
+                <!-- Skill Polygon -->
+                <polygon points="50,14 86.1,38.3 71.1,79.1 30.0,77.5 21.5,40.7" class="radar-polygon"></polygon>
+                
+                <!-- Labels -->
+                <text x="50" y="8" class="radar-label" text-anchor="middle">AI & NLP</text>
+                <text x="92" y="38" class="radar-label" text-anchor="start">QA & Automation</text>
+                <text x="76" y="86" class="radar-label" text-anchor="start">Backend & API</text>
+                <text x="24" y="86" class="radar-label" text-anchor="end">Databases</text>
+                <text x="8" y="38" class="radar-label" text-anchor="end">CI/CD</text>
+                
+                <!-- Interactive dots -->
+                <circle cx="50" cy="14" r="3" class="radar-dot" data-skill="AI & NLP: 90%"></circle>
+                <circle cx="86.1" cy="38.3" r="3" class="radar-dot" data-skill="QA & Automation: 95%"></circle>
+                <circle cx="71.1" cy="79.1" r="3" class="radar-dot" data-skill="Backend & API: 90%"></circle>
+                <circle cx="30.0" cy="77.5" r="3" class="radar-dot" data-skill="Databases & SQL: 85%"></circle>
+                <circle cx="21.5" cy="40.7" r="3" class="radar-dot" data-skill="CI/CD & Pipelines: 75%"></circle>
+              </svg>
+              <div id="radar-tooltip" class="radar-tooltip">Hover over vertices to inspect</div>
+            </div>
+          </div>
+          
+          <!-- QA Live Suite Runner (Phase 3) -->
+          <div class="qa-dashboard-card glass">
+            <div class="qa-header">
+              <h3>QA Automation Live Suite</h3>
+              <button class="qa-run-btn" id="qa-run-btn" onclick="runQASuite()">Run Test Suite</button>
+            </div>
+            <div class="qa-progress-container">
+              <div class="qa-progress-bar" id="qa-progress-bar"></div>
+            </div>
+            <div class="qa-console" id="qa-console">
+              <div class="console-line system">[System] Ready to run automation suite. Click "Run Test Suite" to begin.</div>
+            </div>
+            <div class="qa-status-bar">
+              <span id="qa-status-text">Status: Idle</span>
+              <span id="qa-status-results">Passed: 0/0</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Language Controls for Printable Resume preview -->
+    <div class="controls-wrapper">
+      <h2>Interactive Multilingual Resume</h2>
+      <p style="margin-bottom: 1.5rem; opacity: 0.8;">Select your preferred language below to view and print the A4 document.</p>
+      <div class="controls">
+        <button class="lang-btn active" onclick="switchLang('en')">English</button>
+        <button class="lang-btn" onclick="switchLang('fa')">فارسی</button>
+        <button class="lang-btn" onclick="switchLang('bg')">Български</button>
+        <button class="print-btn" onclick="window.print()">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0v5h12v-5"></path></svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Modern Research Project Modal -->
+    <div id="project-modal" class="project-modal hidden" onclick="handleOutsideClick(event)">
+      <div class="project-modal-content glass">
+        <span class="modal-close" onclick="closeProjectModal()">&times;</span>
+        <div id="project-modal-body"></div>
+      </div>
+    </div>
+
+    <!-- Floating AI Chatbot Widget (Phase 5) -->
+    <div class="chatbot-widget" id="chatbot-widget">
+      <!-- Chat Toggle Button -->
+      <button class="chatbot-toggle" id="chatbot-toggle" onclick="toggleChat()" title="Ask Amir's Bot">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chat-open-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chat-close-icon hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      
+      <!-- Chat Dialog Box -->
+      <div class="chatbot-dialog glass hidden" id="chatbot-dialog">
+        <div class="chatbot-header">
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <span class="chatbot-status-dot"></span>
+            <h4>Amir's Assistant Bot</h4>
+          </div>
+          <span class="chat-dialog-close" onclick="closeChat(event)">&times;</span>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+          <div class="chat-msg bot">Hi there! Ask me any question about Amir's skills, experience, or education. Or choose a quick option below:</div>
+        </div>
+        <div class="chatbot-suggestions">
+          <button class="chat-suggest-btn" onclick="askQuickChat('experience')">Work Experience</button>
+          <button class="chat-suggest-btn" onclick="askQuickChat('skills')">Top Skills</button>
+          <button class="chat-suggest-btn" onclick="askQuickChat('contact')">How to Contact</button>
+        </div>
+        <div class="chatbot-input-container">
+          <input type="text" id="chatbot-input" placeholder="Type a question and press enter..." onkeydown="handleChatKey(event)" aria-label="Chatbot input query">
+          <button class="chatbot-send-btn" onclick="sendChatMessage()" aria-label="Send message button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- A4 Printable Resume Container (Sole survivor on Print) -->
+  <div id="resume-section">
+    
+    <!-- English Resume -->
+    <div class="resume-container" id="resume-en">
+      <div class="sidebar">
+        <div class="profile-img-container">
+          <img class="profile-img" src="assets/profile.jpg" alt="Amir Tahani">
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Contact</div>
+          <div class="contact-item"><strong>Location</strong>Sofia, Bulgaria 1680</div>
+          <div class="contact-item"><strong>Email</strong><a href="mailto:amirthn653381@gmail.com">amirthn653381@gmail.com</a></div>
+          <div class="contact-item"><strong>Phone</strong>+359 889 700 004</div>
+          <div class="contact-item"><strong>Portfolio</strong><a href="https://amirthn6533.github.io/cv/" target="_blank">amirthn6533.github.io/cv</a></div>
+          <div class="contact-item"><strong>LinkedIn</strong><a href="https://linkedin.com/in/amir-tahani123" target="_blank">amir-tahani123</a></div>
+          <div class="contact-item"><strong>GitHub</strong><a href="https://github.com/amirthn6533" target="_blank">amirthn6533</a></div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Education</div>
+          <div class="contact-item">
+            <strong>B.Sc. Computer Science</strong>
+            Technical University of Sofia
+            <div style="font-size:0.75rem; color:var(--light-text); margin-top:0.1rem;">Graduate</div>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Languages</div>
+          <div class="contact-item">English – Very Good</div>
+          <div class="contact-item">Persian – Native</div>
+          <div class="contact-item">Bulgarian – Intermediate</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Certifications</div>
+          <div class="contact-item">QA & Automation Specialist</div>
+          <div class="contact-item">Advanced AI & NLP Engineering</div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div>
+          <div class="header-info">
+            <h1>Amir Tahani</h1>
+            <div class="title">Computer Science Graduate • Backend / AI Engineer • QA Specialist</div>
+          </div>
+          <p class="summary-text">
+            Motivated Computer Science graduate with a strong foundation in software engineering, backend architectures, and AI applications. Passionate about designing robust APIs, integrating intelligent NLP models, and maintaining high software quality. Driven to bridge the gap between AI development and production systems through testing, debugging, and reliable software delivery.
+          </p>
+          <div class="main-section">
+            <div class="main-section-title">Technical Skills</div>
+            <div>
+              <span class="skill-badge">Python</span><span class="skill-badge">FastAPI</span><span class="skill-badge">TypeScript / JS</span>
+              <span class="skill-badge">Playwright / Selenium</span><span class="skill-badge">Pytest & QA Automation</span><span class="skill-badge">NLP / Transformers</span>
+              <span class="skill-badge">SQL / SQLite</span><span class="skill-badge">REST APIs & Postman</span><span class="skill-badge">Docker & GitHub Actions</span>
+              <span class="skill-badge">Streamlit</span><span class="skill-badge">Git / GitHub</span>
+            </div>
+          </div>
+          <div class="main-section">
+            <div class="main-section-title">Experience</div>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-title">Junior Software Tester / QA Engineer</span>
+                <span class="timeline-date">Mar 2024 – Dec 2024</span>
+              </div>
+              <div class="timeline-subtitle">lead2lid • Sofia, Bulgaria</div>
+              <ul class="timeline-desc">
+                <li>Drove quality assurance efforts by executing manual, functional, and regression test suites for web applications, leading to a 15% reduction in post-release defects.</li>
+                <li>Documented comprehensive bug reports with detailed logs, technical specs, and reproduction steps to streamline developer triage.</li>
+                <li>Leveraged Postman to verify REST API response payloads, latency, and end-to-end integration workflows.</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-title">Call Center Agent</span>
+                <span class="timeline-date">Jan 2023 – Jan 2024</span>
+              </div>
+              <div class="timeline-subtitle">Bigside • Sofia, Bulgaria</div>
+              <ul class="timeline-desc">
+                <li>Delivered high-quality client interaction and technical support under pressure, maintaining a satisfaction rating above 95%.</li>
+                <li>Refined critical interpersonal skills, problem-solving, and cross-functional team communication.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-section" style="margin-bottom: 0;">
+            <div class="main-section-title">Core Open-Source & Enterprise Contributions</div>
+            <div class="timeline-item" style="margin-bottom: 0.35rem;">
               <div class="timeline-header">
                 <span class="timeline-title">NASA EOSDIS & Earth Science (nasa/earthdata-search)</span>
                 <span class="timeline-date">PR #2113 & PR #2114 • TypeScript, React, Vitest</span>
