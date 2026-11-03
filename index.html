@@ -55,8 +55,127 @@
       </div>
     </header>
 
+        <!-- Enterprise Open-Source & Ecosystem Highlights -->
+    <section class="projects-section" style="margin-bottom: 3.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 1.5rem; gap: 0.5rem;">
+        <h2 style="margin-bottom: 0;">🏆 Enterprise Open-Source & Core Infrastructure Contributions</h2>
+        <span style="font-size: 0.88rem; color: #60a5fa; font-weight: 500;">Contributions to SAP Labs Bulgaria, LiteLLM (19k★) & Global AI Ecosystem</span>
+      </div>
+      <div class="projects-grid">
+        
+        <!-- Card 1: LiteLLM -->
+        <article class="project-card glass" style="cursor: default;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+              <span class="modal-tag" style="background: rgba(147, 51, 234, 0.18); color: #c084fc; border-color: rgba(147, 51, 234, 0.3); margin: 0;">BerriAI / LiteLLM (19k★)</span>
+              <span style="font-size: 0.75rem; color: #34d399; font-weight: 600; background: rgba(16, 185, 129, 0.12); padding: 0.2rem 0.6rem; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.25);">CI & Veria AI Passed 🚀</span>
+            </div>
+            <h3 style="margin: 0.4rem 0; font-size: 1.15rem; color: var(--text-main);">PR #49870: Fix Spend Reset Negative Precision Underflow</h3>
+            <p style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; margin: 0.6rem 0 1rem;">
+              Resolved IEEE-754 precision underflow (<code style="color: #f43f5e;">-2.7e-17</code>) occurring on periodic spend resets across Verification Tokens, Users, and Teams. Implemented unit-of-work queue clamping and Pydantic schema validation.
+            </p>
+            <div style="margin-bottom: 1rem;">
+              <span class="modal-tag">Python</span>
+              <span class="modal-tag">PostgreSQL</span>
+              <span class="modal-tag">Prisma</span>
+              <span class="modal-tag">Pydantic</span>
+              <span class="modal-tag">Pytest</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--card-border-web); padding-top: 0.8rem;">
+            <span style="font-size: 0.8rem; color: var(--text-sub);">Issue #49842</span>
+            <a href="https://github.com/BerriAI/litellm/pull/49870" target="_blank" style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+              View PR #49870 &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2: SAP Labs Bulgaria / UI5 Web Components -->
+        <article class="project-card glass" style="cursor: default;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+              <span class="modal-tag" style="background: rgba(14, 165, 233, 0.18); color: #38bdf8; border-color: rgba(14, 165, 233, 0.3); margin: 0;">SAP Labs Bulgaria</span>
+              <span style="font-size: 0.75rem; color: #34d399; font-weight: 600; background: rgba(16, 185, 129, 0.12); padding: 0.2rem 0.6rem; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.25);">APPROVED by @TeodorTaushanov 🎉</span>
+            </div>
+            <h3 style="margin: 0.4rem 0; font-size: 1.15rem; color: var(--text-main);">PR #14258: Fix Popup preventInitialFocus Lifecycle Timing</h3>
+            <p style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; margin: 0.6rem 0 1rem;">
+              Fixed lifecycle bug where setting <code style="color: #38bdf8;">preventInitialFocus</code> dynamically in the same execution tick after <code style="color: #38bdf8;">open()</code> was ignored. Verified by 4 Cypress suites and officially approved by Core Maintainer.
+            </p>
+            <div style="margin-bottom: 1rem;">
+              <span class="modal-tag">TypeScript</span>
+              <span class="modal-tag">Web Components</span>
+              <span class="modal-tag">WAI-ARIA</span>
+              <span class="modal-tag">Cypress</span>
+              <span class="modal-tag">SAP Fiori</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--card-border-web); padding-top: 0.8rem;">
+            <span style="font-size: 0.8rem; color: var(--text-sub);">Issue #14234</span>
+            <a href="https://github.com/UI5/webcomponents/pull/14258" target="_blank" style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+              View PR #14258 &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3: SAP AI Core & LangChain -->
+        <article class="project-card glass" style="cursor: default;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+              <span class="modal-tag" style="background: rgba(14, 165, 233, 0.18); color: #38bdf8; border-color: rgba(14, 165, 233, 0.3); margin: 0;">SAP / ai-sdk-js</span>
+              <span style="font-size: 0.75rem; color: #fbbf24; font-weight: 600; background: rgba(245, 158, 11, 0.12); padding: 0.2rem 0.6rem; border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.25);">Co-authored by Maintainer @marikaner 🚀</span>
+            </div>
+            <h3 style="margin: 0.4rem 0; font-size: 1.15rem; color: var(--text-main);">PR #2524: Reasoning Models max_completion_tokens</h3>
+            <p style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; margin: 0.6rem 0 1rem;">
+              Engineered first-class support for <code style="color: #38bdf8;">max_completion_tokens</code> in Azure OpenAI client and LangChain integration, unblocking OpenAI reasoning models (<code style="color: #a855f7;">o1</code>, <code style="color: #a855f7;">o3-mini</code>).
+            </p>
+            <div style="margin-bottom: 1rem;">
+              <span class="modal-tag">TypeScript</span>
+              <span class="modal-tag">LangChain</span>
+              <span class="modal-tag">SAP AI Core</span>
+              <span class="modal-tag">Azure OpenAI</span>
+              <span class="modal-tag">o1 / o3</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--card-border-web); padding-top: 0.8rem;">
+            <span style="font-size: 0.8rem; color: var(--text-sub);">Issue #1174</span>
+            <a href="https://github.com/SAP/ai-sdk-js/pull/2524" target="_blank" style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+              View PR #2524 &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 4: Cognee AI Community -->
+        <article class="project-card glass" style="cursor: default;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+              <span class="modal-tag" style="background: rgba(244, 63, 94, 0.18); color: #fb7185; border-color: rgba(244, 63, 94, 0.3); margin: 0;">topoteretes / cognee (8k★)</span>
+              <span style="font-size: 0.75rem; color: #38bdf8; font-weight: 600; background: rgba(14, 165, 233, 0.12); padding: 0.2rem 0.6rem; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.25);">5 Connectors &bull; 80+ Tests 🟢</span>
+            </div>
+            <h3 style="margin: 0.4rem 0; font-size: 1.15rem; color: var(--text-main);">PRs #612–#616: Enterprise Ecosystem Graph Ingestion</h3>
+            <p style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; margin: 0.6rem 0 1rem;">
+              Architected 5 standalone knowledge graph connectors for Ansible Infrastructure, Excalidraw Visual Diagrams, Hex.pm BEAM, Crates.io Rust, and DigitalOcean Cloud with automated test suites.
+            </p>
+            <div style="margin-bottom: 1rem;">
+              <span class="modal-tag">Python</span>
+              <span class="modal-tag">Knowledge Graph</span>
+              <span class="modal-tag">NetworkX</span>
+              <span class="modal-tag">FastAPI</span>
+              <span class="modal-tag">Pytest</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--card-border-web); padding-top: 0.8rem;">
+            <span style="font-size: 0.8rem; color: var(--text-sub);">Issues #6490, #6467, #6484</span>
+            <a href="https://github.com/topoteretes/cognee-community/pulls/amirthn6533" target="_blank" style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+              View Connectors &rarr;
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
     <section class="projects-section">
-      <h2>My Open-Source & Research Projects</h2>
+      <h2>Personal Projects & Applications</h2>
       <div class="projects-grid" id="repos-container">
         <!-- Loaded dynamically from GitHub API -->
         <p style="grid-column: 1 / -1; text-align: center; opacity: 0.7;">Fetching live projects from GitHub...</p>
@@ -291,23 +410,44 @@
             </div>
           </div>
           <div class="main-section" style="margin-bottom: 0;">
-            <div class="main-section-title">Highlighted Projects</div>
-            <div class="timeline-item" style="margin-bottom: 0.45rem;">
+            <div class="main-section-title">Core Open-Source & Enterprise Contributions</div>
+            <div class="timeline-item" style="margin-bottom: 0.35rem;">
+              <div class="timeline-header">
+                <span class="timeline-title">LiteLLM AI Gateway (BerriAI/litellm • 19k★)</span>
+                <span class="timeline-date">PR #49870 • Python, PostgreSQL, Prisma, Pydantic</span>
+              </div>
+              <ul class="timeline-desc">
+                <li>Fixed negative fractional spend underflow (-2.7e-17) after budget reset decrement across API verification tokens, users, and teams via unit-of-work repositories and Pydantic model validators.</li>
+              </ul>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.35rem;">
+              <div class="timeline-header">
+                <span class="timeline-title">SAP Labs Bulgaria (UI5/webcomponents)</span>
+                <span class="timeline-date">PR #14258 (APPROVED) & PR #14245 • TypeScript, Cypress, a11y</span>
+              </div>
+              <ul class="timeline-desc">
+                <li>Resolved Popup lifecycle timing bug where preventInitialFocus set after open() in same tick was ignored (Approved by Core Maintainer Teodor Taushanov). Fixed invalid WAI-ARIA role="listitem" attributes.</li>
+              </ul>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.35rem;">
+              <div class="timeline-header">
+                <span class="timeline-title">SAP AI Core & Generative AI Hub (SAP/ai-sdk-js)</span>
+                <span class="timeline-date">PR #2524 & PR #2527 • TypeScript, LangChain, Azure OpenAI</span>
+              </div>
+              <ul class="timeline-desc">
+                <li>Added first-class support for max_completion_tokens in Azure OpenAI and LangChain integration for reasoning models (o1, o3-mini); co-authored and refactored with SAP Maintainer Marika Marszalkowski.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-section" style="margin-bottom: 0; margin-top: 0.4rem;">
+            <div class="main-section-title">Highlighted Engineering Projects</div>
+            <div class="timeline-item" style="margin-bottom: 0.35rem;">
               <div class="timeline-header">
                 <span class="timeline-title">Multimodal AI Fact-Checking & Deepfake Detection</span>
                 <span class="timeline-date">Python, FastAPI, ML / NLP</span>
               </div>
               <ul class="timeline-desc">
                 <li>Engineered a FastAPI microservice and ML pipeline to verify text claims against relational datasets and detect visual deepfake anomalies with sub-second inference.</li>
-              </ul>
-            </div>
-            <div class="timeline-item" style="margin-bottom: 0.45rem;">
-              <div class="timeline-header">
-                <span class="timeline-title">AI Email & Job Assistant Suite</span>
-                <span class="timeline-date">Python, FastAPI, Transformers, Docker</span>
-              </div>
-              <ul class="timeline-desc">
-                <li>Developed NLP productivity tools using Hugging Face Transformers, Gemini AI, Streamlit, and SQLite to auto-classify emails and track job workflows, cutting manual review time by ~40%.</li>
               </ul>
             </div>
             <div class="timeline-item" style="margin-bottom: 0;">
@@ -371,23 +511,44 @@
             </div>
           </div>
           <div class="main-section" style="margin-bottom: 0;">
-            <div class="main-section-title">پروژه‌های شاخص</div>
-            <div class="timeline-item" style="margin-bottom: 0.45rem;">
+            <div class="main-section-title">مشارکت‌های متن‌باز سازمانی و زیرساخت هوش مصنوعی</div>
+            <div class="timeline-item" style="margin-bottom: 0.35rem;">
+              <div class="timeline-header">
+                <span class="timeline-title">گیت‌وی هوش مصنوعی LiteLLM (BerriAI/litellm • ۱۹ هزار ستاره)</span>
+                <span class="timeline-date">PR #49870 • Python, PostgreSQL, Prisma, Pydantic</span>
+              </div>
+              <ul class="timeline-desc" style="padding-right: 1.1rem; padding-left: 0;">
+                <li>حل مشکل سرریز اعشاری منفی در ریست بودجه توکن‌ها، کاربران و تیم‌ها در سطح Unit of Work و اعتبارسنجی مدل‌های Pydantic با تست‌های کامل.</li>
+              </ul>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.35rem;">
+              <div class="timeline-header">
+                <span class="timeline-title">اس‌اِی‌پی لبز بلغارستان (SAP Labs UI5 Web Components)</span>
+                <span class="timeline-date">PR #14258 (تأیید رسمی) و PR #14245 • TypeScript, Cypress, a11y</span>
+              </div>
+              <ul class="timeline-desc" style="padding-right: 1.1rem; padding-left: 0;">
+                <li>رفع باگ زمان‌بندی چرخه حیات کامپوننت Popup در تعیین preventInitialFocus (مورد تأیید رسمی Teodor Taushanov مدیر ارشد UI5) و رفع باگ‌های دسترس‌پذیری WAI-ARIA.</li>
+              </ul>
+            </div>
+            <div class="timeline-item" style="margin-bottom: 0.35rem;">
+              <div class="timeline-header">
+                <span class="timeline-title">کیت توسعه هوش مصنوعی SAP (SAP/ai-sdk-js)</span>
+                <span class="timeline-date">PR #2524 و PR #2527 • TypeScript, LangChain, Azure OpenAI</span>
+              </div>
+              <ul class="timeline-desc" style="padding-right: 1.1rem; padding-left: 0;">
+                <li>پشتیبانی پیشرفته از مدل‌های استدلالی OpenAI (مانند o1 و o3-mini) با پارامتر max_completion_tokens با همکاری و بازآرایی مستقیم منتینر SAP (Marika Marszalkowski).</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-section" style="margin-bottom: 0; margin-top: 0.4rem;">
+            <div class="main-section-title">پروژه‌های شاخص مهندسی</div>
+            <div class="timeline-item" style="margin-bottom: 0.35rem;">
               <div class="timeline-header">
                 <span class="timeline-title">سیستم راستی‌آزمایی و تشخیص دیپ‌فیک چندوجهی (Multimodal AI)</span>
                 <span class="timeline-date">Python, FastAPI, ML / NLP</span>
               </div>
               <ul class="timeline-desc" style="padding-right: 1.1rem; padding-left: 0;">
                 <li>طراحی و پیاده‌سازی میکروسرویس FastAPI و پایپ‌لاین یادگیری ماشین جهت بررسی صحت ادعاهای متنی و تشخیص ناهنجاری‌های تصویری دیپ‌فیک در کسری از ثانیه.</li>
-              </ul>
-            </div>
-            <div class="timeline-item" style="margin-bottom: 0.45rem;">
-              <div class="timeline-header">
-                <span class="timeline-title">مجموعه دستیار هوشمند ایمیل و کاریابی (AI Assistants)</span>
-                <span class="timeline-date">Python, FastAPI, Transformers, Docker</span>
-              </div>
-              <ul class="timeline-desc" style="padding-right: 1.1rem; padding-left: 0;">
-                <li>توسعه سیستم‌های پردازش زبان طبیعی (NLP) با Hugging Face، Gemini AI، پایگاه داده SQLite و داشبورد Streamlit با کاهش ۴۰ درصدی زمان بررسی دستی.</li>
               </ul>
             </div>
             <div class="timeline-item" style="margin-bottom: 0;">
