@@ -51,7 +51,7 @@
     }
     .article-card:hover { transform: translateY(-3px); border-color: rgba(252, 109, 38, 0.4); background: rgba(28, 38, 62, 0.8); }
     .card-tag { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 0.5rem; }
-    .article-card h2 { font-size: 1.4rem; font-weight: 700; color: #f8fafc; margin-bottom: 0.75rem; line-height: 1.35; }
+    .article-card h2 { font-size: 1.35rem; font-weight: 700; color: #f8fafc; margin-bottom: 0.75rem; line-height: 1.35; }
     .article-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem; }
     .card-footer { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #64748b; font-weight: 500; }
     .read-link { color: var(--accent-alt); font-weight: 600; }
@@ -81,7 +81,7 @@
           <div class="card-tag">Community Architecture &middot; 8 Min Read</div>
           <h2>Contributing to GitLab: Architectural Lessons from 4 Open-Source Merge Requests</h2>
           <p>
-            An overarching analysis of architectural patterns, Go test ergonomics, CLI telemetry, and security boundary isolation across four production contributions to GitLab.
+            An overarching analysis of architectural patterns, Go test ergonomics, CLI telemetry, and security boundary isolation across production contributions to GitLab.
           </p>
           <div class="card-footer">
             <span>Published: Nov 2026</span>
@@ -134,6 +134,71 @@
           <h2>Solving Ambiguous Upstream Routing in Multi-Level Git Fork Networks</h2>
           <p>
             Resolving HTTP 422 errors when invoking CLI commands across unrelated local git checkouts while preserving deep fork hierarchies and preventing accidental upstream pushes (MR !4432).
+          </p>
+          <div class="card-footer">
+            <span>Published: Nov 2026</span>
+            <span class="read-link">Read Article &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Article 6 -->
+        <a href="gitlab-runner-controller-id-parsing.html" class="article-card">
+          <div class="card-tag">Go Refactoring & Ergonomics &middot; 6 Min Read</div>
+          <h2>Standardizing Numerical Resource ID Validation Across 25 Go CLI Packages</h2>
+          <p>
+            Refactoring ID parsing across 25 packages, replacing unhelpful strconv errors with descriptive feedback, and enforcing positive identifier invariants (MR !4425).
+          </p>
+          <div class="card-footer">
+            <span>Published: Nov 2026</span>
+            <span class="read-link">Read Article &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Article 7 -->
+        <a href="gitlab-omnibus-libicu-packaging.html" class="article-card">
+          <div class="card-tag">Packaging & Build Systems &middot; 5 Min Read</div>
+          <h2>Robust Package Version Derivation in GitLab Omnibus Build Pipelines</h2>
+          <p>
+            Eliminating split-brain version parsing and managing dynamic symlink targets across legacy and modern ICU tag formats (MR !10101).
+          </p>
+          <div class="card-footer">
+            <span>Published: Nov 2026</span>
+            <span class="read-link">Read Article &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Article 8 -->
+        <a href="cubesat-csp-spacecraft-protocol.html" class="article-card">
+          <div class="card-tag">Aerospace & Embedded Systems &middot; 6 Min Read</div>
+          <h2>Engineering CubeSat Communications: Cross-Platform CSP Firmware for Spacecraft</h2>
+          <p>
+            Solving POSIX timer conflicts, guarding USART driver threads, and preventing memory leaks in EnduroSat CubeSat Space Protocol firmware (PR #2).
+          </p>
+          <div class="card-footer">
+            <span>Published: Nov 2026</span>
+            <span class="read-link">Read Article &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Article 9 -->
+        <a href="session-aware-c11-spacecraft-modules.html" class="article-card">
+          <div class="card-tag">Embedded Protocols & Telemetry &middot; 6 Min Read</div>
+          <h2>Building Session-Aware Command/Response Protocols for Spacecraft Modules</h2>
+          <p>
+            Hardening C11 command/response session protocol tests, bounds checking vector buffers, and static linkage across satellite modules (PR #1).
+          </p>
+          <div class="card-footer">
+            <span>Published: Nov 2026</span>
+            <span class="read-link">Read Article &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Article 10 -->
+        <a href="gitlab-contributor-growth-playbook.html" class="article-card">
+          <div class="card-tag">Culture & Contributor Strategy &middot; 7 Min Read</div>
+          <h2>The GitLab Contributor Growth Playbook: From First Commit to Core Systems</h2>
+          <p>
+            A high-velocity guide to navigating the GitLab contributor ladder, scoring points across code, content, translations, and code review etiquette.
           </p>
           <div class="card-footer">
             <span>Published: Nov 2026</span>

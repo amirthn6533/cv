@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standardizing Numerical Resource ID Validation Across 25 Go CLI Packages | Amir Tahani</title>
+  <meta name="description" content="Technical deep dive into error handling ergonomics, string parsing, and test assertions across 25 packages in GitLab CLI (MR !4425) by Amir Tahani.">
+  <meta name="author" content="Amir Tahani">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: rgba(22, 30, 49, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #fc6d26;
+      --accent-alt: #38bdf8;
+      --code-bg: #030712;
+      --border-color: #1e293b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      background-image: radial-gradient(at 0% 0%, rgba(252, 109, 38, 0.08) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.08) 0px, transparent 50%);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.75;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
+    header { margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem; }
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.95rem; }
+    .nav-bar a { color: var(--accent-alt); text-decoration: none; transition: color 0.2s; }
+    .nav-bar a:hover { color: #7dd3fc; }
+    .badge-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(252, 109, 38, 0.15);
+      color: #ff8a4c; border: 1px solid rgba(252, 109, 38, 0.3); padding: 0.35rem 0.85rem;
+      border-radius: 9999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;
+    }
+    h1 { font-size: 2.3rem; font-weight: 800; line-height: 1.25; color: #f8fafc; margin-bottom: 1.25rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 1.25rem; color: var(--text-muted); font-size: 0.9rem; }
+    .meta-item { display: flex; align-items: center; gap: 0.4rem; }
+    .meta a { color: var(--text); text-decoration: none; }
+    .meta a:hover { color: var(--accent-alt); }
+    h2 { font-size: 1.6rem; font-weight: 700; color: #f1f5f9; margin-top: 2.5rem; margin-bottom: 1rem; border-left: 4px solid var(--accent); padding-left: 0.75rem; }
+    h3 { font-size: 1.25rem; font-weight: 600; color: #e2e8f0; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+    p { margin-bottom: 1.25rem; }
+    ul, ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; background: rgba(255, 255, 255, 0.08); padding: 0.15rem 0.4rem; border-radius: 4px; color: #fca5a5; }
+    pre { background: var(--code-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.88rem; line-height: 1.6; }
+    pre code { background: none; padding: 0; color: #e2e8f0; }
+    .callout { background: var(--card-bg); border: 1px solid var(--card-border); border-left: 4px solid var(--accent-alt); border-radius: 8px; padding: 1.25rem; margin: 1.75rem 0; }
+    .callout-title { font-weight: 700; color: var(--accent-alt); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .mr-card { background: rgba(30, 41, 59, 0.5); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem; transition: transform 0.2s, border-color 0.2s; }
+    .mr-card:hover { transform: translateY(-2px); border-color: rgba(252, 109, 38, 0.4); }
+    .mr-card a { color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.1rem; }
+    footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="nav-bar">
+        <a href="index.html">&larr; Back to Engineering Blog</a>
+        <a href="https://amirthn6533.github.io/cv/">Main Portfolio &rarr;</a>
+      </div>
+      <div class="badge-pill">
+        <span>⚙️ Go Refactoring & Developer Ergonomics</span>
+      </div>
+      <h1>Standardizing Numerical Resource ID Validation Across 25 Go CLI Packages</h1>
+      <div class="meta">
+        <div class="meta-item">
+          <span>Author:</span>
+          <a href="https://github.com/amirthn6533"><strong>Amir Tahani</strong></a>
+        </div>
+        <div class="meta-item">
+          <span>Target:</span>
+          <span><code>gitlab-org/cli</code></span>
+        </div>
+        <div class="meta-item">
+          <span>Merge Request:</span>
+          <a href="https://gitlab.com/gitlab-org/cli/-/merge_requests/4425" target="_blank"><strong>MR !4425</strong></a>
+        </div>
+        <div class="meta-item">
+          <span>Reading Time:</span>
+          <span>6 min read</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="mr-card">
+        <a href="https://gitlab.com/gitlab-org/cli/-/merge_requests/4425" target="_blank">GitLab CLI Merge Request !4425: refactor(cmdutils): share ParseID helper so invalid-ID errors name rejected value &rarr;</a>
+        <p style="margin-top: 0.5rem; margin-bottom: 0; color: var(--text-muted); font-size: 0.9rem;">
+          Approved by GitLab maintainer Rane Hebden. Unifies ID parsing across 25 packages, eliminates opaque strconv errors, and enforces strict positive identifier validation.
+        </p>
+      </div>
+
+      <h2>The Ergonomic Flaw in Command-Line Error Messages</h2>
+      <p>
+        In command-line tools managing complex remote infrastructure (such as GitLab Runners, Container Registries, and Deploy Tokens), user input errors should clearly reflect what was typed wrong. Previously, when users entered non-numeric IDs like <code>glab runner get abc</code>, the output was:
+      </p>
+      <pre><code>strconv.ParseInt: parsing "abc": invalid syntax</code></pre>
+      <p>
+        While engineers had attempted to wrap this via <code>cmdutils.WrapError(err, "invalid runner ID")</code>, the underlying <code>ExitError</code> discarded the descriptive wrapper string during console output, yielding unhelpful, robotic errors.
+      </p>
+
+      <h2>The Unified Helper: <code>cmdutils.ParseID</code></h2>
+      <p>
+        In Merge Request <code>!4425</code>, we introduced a centralized parsing and validation utility:
+      </p>
+      <pre><code>func ParseID(value, name string) (int64, error) {
+    id, err := strconv.ParseInt(value, 10, 64)
+    if err != nil || id < 1 {
+        return 0, fmt.Errorf("invalid %s: %q", name, value)
+    }
+    return id, nil
+}</code></pre>
+
+      <h3>Key Enhancements:</h3>
+      <ul>
+        <li><strong>Rejecting Zero & Negative IDs:</strong> GitLab database IDs are guaranteed to be positive integers (<code>>= 1</code>). Rejecting <code>0</code> or <code>-1</code> client-side prevents redundant HTTP network roundtrips.</li>
+        <li><strong>Clear User Feedback:</strong> Errors precisely state the entity and the rejected literal value: <code>invalid runner controller ID: "foo"</code>.</li>
+        <li><strong>Broad Migration:</strong> Refactored 25 packages across <code>runner</code>, <code>runnercontroller</code>, <code>container_registry</code>, and <code>deploy-token</code>.</li>
+      </ul>
+
+      <h2>Maintainer Verification & Approval</h2>
+      <p>
+        Following extensive table-driven test additions to verify isolated subtest executions, GitLab CLI Maintainer <strong>Rane Hebden</strong> reviewed and approved the change:
+      </p>
+      <div class="callout">
+        <div class="callout-title">💬 Maintainer Review Summary</div>
+        <p style="margin-bottom: 0;">
+          <em>"I checked that every call site that now rejects 0 and negative values parses a positional GitLab resource ID, which GitLab never issues below 1, so the stricter check can't refuse a real ID... Merged into current main, the 25 touched packages pass go test and golangci-lint reports 0 issues. Approving."</em>
+        </p>
+      </div>
+
+      <h2>Conclusion</h2>
+      <p>
+        Consolidating repetitive parsing patterns into well-tested utility primitives drastically reduces boilerplate while enforcing a high standard of consistency across enterprise CLI suites.
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Amir Tahani. Published as part of open-source contributions to GitLab infrastructure.</p>
+    </footer>
+  </div>
+</body>
+</html>
