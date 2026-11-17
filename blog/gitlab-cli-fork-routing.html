@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solving Ambiguous Upstream Routing in Multi-Level Git Fork Networks | Amir Tahani</title>
+  <meta name="description" content="Technical deep dive into resolving upstream Git repository routing in multi-level fork networks for CLI tools (MR !4432) by Amir Tahani.">
+  <meta name="author" content="Amir Tahani">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: rgba(22, 30, 49, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #fc6d26;
+      --accent-alt: #38bdf8;
+      --code-bg: #030712;
+      --border-color: #1e293b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      background-image: radial-gradient(at 0% 0%, rgba(252, 109, 38, 0.08) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.08) 0px, transparent 50%);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.75;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
+    header { margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem; }
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.95rem; }
+    .nav-bar a { color: var(--accent-alt); text-decoration: none; transition: color 0.2s; }
+    .nav-bar a:hover { color: #7dd3fc; }
+    .badge-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(252, 109, 38, 0.15);
+      color: #ff8a4c; border: 1px solid rgba(252, 109, 38, 0.3); padding: 0.35rem 0.85rem;
+      border-radius: 9999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;
+    }
+    h1 { font-size: 2.3rem; font-weight: 800; line-height: 1.25; color: #f8fafc; margin-bottom: 1.25rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 1.25rem; color: var(--text-muted); font-size: 0.9rem; }
+    .meta-item { display: flex; align-items: center; gap: 0.4rem; }
+    .meta a { color: var(--text); text-decoration: none; }
+    .meta a:hover { color: var(--accent-alt); }
+    h2 { font-size: 1.6rem; font-weight: 700; color: #f1f5f9; margin-top: 2.5rem; margin-bottom: 1rem; border-left: 4px solid var(--accent); padding-left: 0.75rem; }
+    h3 { font-size: 1.25rem; font-weight: 600; color: #e2e8f0; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+    p { margin-bottom: 1.25rem; }
+    ul, ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; background: rgba(255, 255, 255, 0.08); padding: 0.15rem 0.4rem; border-radius: 4px; color: #fca5a5; }
+    pre { background: var(--code-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.88rem; line-height: 1.6; }
+    pre code { background: none; padding: 0; color: #e2e8f0; }
+    .callout { background: var(--card-bg); border: 1px solid var(--card-border); border-left: 4px solid var(--accent-alt); border-radius: 8px; padding: 1.25rem; margin: 1.75rem 0; }
+    .callout-title { font-weight: 700; color: var(--accent-alt); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .mr-card { background: rgba(30, 41, 59, 0.5); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem; transition: transform 0.2s, border-color 0.2s; }
+    .mr-card:hover { transform: translateY(-2px); border-color: rgba(252, 109, 38, 0.4); }
+    .mr-card a { color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.1rem; }
+    footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="nav-bar">
+        <a href="index.html">&larr; Back to Engineering Blog</a>
+        <a href="https://amirthn6533.github.io/cv/">Main Portfolio &rarr;</a>
+      </div>
+      <div class="badge-pill">
+        <span>🌿 Git Internals & CLI Architecture</span>
+      </div>
+      <h1>Solving Ambiguous Upstream Routing in Multi-Level Git Fork Networks</h1>
+      <div class="meta">
+        <div class="meta-item">
+          <span>Author:</span>
+          <a href="https://github.com/amirthn6533"><strong>Amir Tahani</strong></a>
+        </div>
+        <div class="meta-item">
+          <span>Target:</span>
+          <span><code>gitlab-org/cli</code></span>
+        </div>
+        <div class="meta-item">
+          <span>Merge Request:</span>
+          <a href="https://gitlab.com/gitlab-org/cli/-/merge_requests/4432" target="_blank"><strong>MR !4432</strong></a>
+        </div>
+        <div class="meta-item">
+          <span>Reading Time:</span>
+          <span>6 min read</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="mr-card">
+        <a href="https://gitlab.com/gitlab-org/cli/-/merge_requests/4432" target="_blank">GitLab CLI Merge Request !4432: fix(mr create): use --repo as source project when local remote is not a fork &rarr;</a>
+        <p style="margin-top: 0.5rem; margin-bottom: 0; color: var(--text-muted); font-size: 0.9rem;">
+          Closes Issue #8666. Resolves HTTP 422 errors when invoking `glab mr create --repo` from unrelated repositories while protecting multi-level fork networks from unintended branch redirects.
+        </p>
+      </div>
+
+      <h2>The Problem: Unintended Remote Coupling in Git CLI Tools</h2>
+      <p>
+        In enterprise developer environments, developers frequently work inside mono-repos, personal scratchpads, or unrelated project folders when attempting to submit Merge Requests to remote repositories using CLI commands like:
+      </p>
+      <pre><code>glab mr create --repo group/project-b --source-branch feature-x</code></pre>
+      <p>
+        Prior to MR <code>!4432</code>, the CLI's initialization phase (<code>PreRun</code>) unconditionally assumed that the local directory's git remote was the intended <code>headRepo</code> (source project). If the local project was not a fork of <code>group/project-b</code>, the API rejected the payload with:
+      </p>
+      <pre><code>422 Unprocessable Entity: Source project is not a fork of the target project</code></pre>
+
+      <h2>The Subtlety of Multi-Level Fork Networks</h2>
+      <p>
+        A naive fix would simply force <code>sourceProject = targetProject</code> whenever the local remote does not match <code>--repo</code>. However, GitLab supports sophisticated <strong>fork networks</strong>:
+      </p>
+      <ul>
+        <li><strong>Forks of Forks:</strong> Developer Fork &rarr; Team Staging Fork &rarr; Upstream Canonical.</li>
+        <li><strong>Sibling Forks:</strong> Multiple forks within an engineering department collaborating on a common feature branch.</li>
+        <li><strong>Direct Pushes:</strong> When flags like <code>--push</code> or <code>--fill</code> are supplied, switching the source project could inadvertently attempt a git push directly into upstream canonical instead of the developer's personal fork!</li>
+      </ul>
+
+      <h2>The Architectural Solution in MR !4432</h2>
+      <p>
+        Collaborating with GitLab CLI maintainers, we engineered a guarded resolution mechanism in <code>internal/commands/mr/create/mr_create.go</code>:
+      </p>
+
+      <pre><code>// Only redirect when local project is completely unrelated
+isUnrelated := !headRepoExplicit &&
+    baseRepoOverridden &&
+    o.MRCreateTargetProject == "" &&
+    o.SourceProject != nil &&
+    o.TargetProject != nil &&
+    o.SourceProject.ForkedFromProject == nil &&
+    (o.TargetProject.ForkedFromProject == nil ||
+     o.TargetProject.ForkedFromProject.ID != o.SourceProject.ID) &&
+    o.SourceProject.PathWithNamespace != o.TargetProject.PathWithNamespace
+
+if isUnrelated {
+    o.io.LogInfof("Using %s as the source project: %s is not a fork of it.\n",
+        o.TargetProject.PathWithNamespace, o.SourceProject.PathWithNamespace)
+    o.SourceProject = o.TargetProject
+    o.headRepo = baseRepo
+}</code></pre>
+
+      <h3>Key Architectural Invariants Enforced:</h3>
+      <ol>
+        <li><strong>Fork Preservation:</strong> If <code>o.SourceProject.ForkedFromProject != nil</code>, the project belongs to a fork hierarchy and is never redirected.</li>
+        <li><strong>User Transparency:</strong> We emit an informative log via <code>o.io.LogInfof</code> so users are explicitly notified when an unrelated source project is defaulted.</li>
+        <li><strong>Deprecated Flag Protection:</strong> Invocations explicitly using deprecated <code>--target-project</code> bypass redirect logic to maintain backwards compatibility.</li>
+      </ol>
+
+      <h2>Lessons in Developer Ergonomics</h2>
+      <p>
+        CLI tools must strike a delicate balance between DWIM ("Do What I Mean") automation and strict developer safety. When inferring state from local git remotes, always distinguish between completely unrelated projects and legitimate complex fork topologies.
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Amir Tahani. Published as part of open-source contributions to GitLab infrastructure.</p>
+    </footer>
+  </div>
+</body>
+</html>

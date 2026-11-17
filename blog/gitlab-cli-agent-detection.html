@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detecting AI Coding Agents at Scale: Heuristics, Precedence, and Signatures in GitLab CLI | Amir Tahani</title>
+  <meta name="description" content="Technical deep dive into AI agent detection heuristics, precedence handling, and environment signatures in GitLab CLI (MR !4459) by Amir Tahani.">
+  <meta name="author" content="Amir Tahani">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: rgba(22, 30, 49, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #fc6d26;
+      --accent-alt: #38bdf8;
+      --code-bg: #030712;
+      --border-color: #1e293b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      background-image: radial-gradient(at 0% 0%, rgba(252, 109, 38, 0.08) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.08) 0px, transparent 50%);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.75;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
+    header { margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem; }
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.95rem; }
+    .nav-bar a { color: var(--accent-alt); text-decoration: none; transition: color 0.2s; }
+    .nav-bar a:hover { color: #7dd3fc; }
+    .badge-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(252, 109, 38, 0.15);
+      color: #ff8a4c; border: 1px solid rgba(252, 109, 38, 0.3); padding: 0.35rem 0.85rem;
+      border-radius: 9999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;
+    }
+    h1 { font-size: 2.3rem; font-weight: 800; line-height: 1.25; color: #f8fafc; margin-bottom: 1.25rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 1.25rem; color: var(--text-muted); font-size: 0.9rem; }
+    .meta-item { display: flex; align-items: center; gap: 0.4rem; }
+    .meta a { color: var(--text); text-decoration: none; }
+    .meta a:hover { color: var(--accent-alt); }
+    h2 { font-size: 1.6rem; font-weight: 700; color: #f1f5f9; margin-top: 2.5rem; margin-bottom: 1rem; border-left: 4px solid var(--accent); padding-left: 0.75rem; }
+    h3 { font-size: 1.25rem; font-weight: 600; color: #e2e8f0; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+    p { margin-bottom: 1.25rem; }
+    ul, ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    code { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; background: rgba(255, 255, 255, 0.08); padding: 0.15rem 0.4rem; border-radius: 4px; color: #fca5a5; }
+    pre { background: var(--code-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.88rem; line-height: 1.6; }
+    pre code { background: none; padding: 0; color: #e2e8f0; }
+    .callout { background: var(--card-bg); border: 1px solid var(--card-border); border-left: 4px solid var(--accent-alt); border-radius: 8px; padding: 1.25rem; margin: 1.75rem 0; }
+    .callout-title { font-weight: 700; color: var(--accent-alt); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .mr-card { background: rgba(30, 41, 59, 0.5); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem; transition: transform 0.2s, border-color 0.2s; }
+    .mr-card:hover { transform: translateY(-2px); border-color: rgba(252, 109, 38, 0.4); }
+    .mr-card a { color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.1rem; }
+    footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="nav-bar">
+        <a href="index.html">&larr; Back to Engineering Blog</a>
+        <a href="https://amirthn6533.github.io/cv/">Main Portfolio &rarr;</a>
+      </div>
+      <div class="badge-pill">
+        <span>🤖 AI Telemetry & Systems Programming</span>
+      </div>
+      <h1>Detecting AI Coding Agents at Scale: Heuristics, Precedence, and Signatures in GitLab CLI</h1>
+      <div class="meta">
+        <div class="meta-item">
+          <span>Author:</span>
+          <a href="https://github.com/amirthn6533"><strong>Amir Tahani</strong></a>
+        </div>
+        <div class="meta-item">
+          <span>Target:</span>
+          <span><code>gitlab-org/cli</code></span>
+        </div>
+        <div class="meta-item">
+          <span>Merge Request:</span>
+          <a href="https://gitlab.com/gitlab-org/cli/-/merge_requests/4459" target="_blank"><strong>MR !4459</strong></a>
+        </div>
+        <div class="meta-item">
+          <span>Reading Time:</span>
+          <span>7 min read</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="mr-card">
+        <a href="https://gitlab.com/gitlab-org/cli/-/merge_requests/4459" target="_blank">GitLab CLI Merge Request !4459: feat(api): close gaps in coding agent detection &rarr;</a>
+        <p style="margin-top: 0.5rem; margin-bottom: 0; color: var(--text-muted); font-size: 0.9rem;">
+          Closes Issue #8749. Closes detection gaps for next-generation AI coding agents, eliminates attribution conflicts, and expands test coverage with 25 table-driven test cases.
+        </p>
+      </div>
+
+      <h2>The Rise of Autonomous AI Coding Agents</h2>
+      <p>
+        As software development transitions into an era of autonomous coding agents, developer tooling must adapt. To understand ecosystem adoption, quantify automated code generation, and tailor developer experiences, the official GitLab CLI (<code>glab</code>) tracks agent invocations through its <code>DetectCodingAgent()</code> engine.
+      </p>
+      <p>
+        However, the rapid influx of new agent runtimes created notable telemetry gaps and attribution conflicts. In Issue #8749, we set out to build an accurate, battle-tested detection engine capable of distinguishing between dozens of concurrent agent environments.
+      </p>
+
+      <h2>The Telemetry Blindspots & Precedence Challenges</h2>
+      <p>
+        Detecting an agent is not as simple as checking whether an environment variable exists. Real-world development setups introduce intricate layering:
+      </p>
+      <ul>
+        <li><strong>Subshell Inheritance & Forwarding:</strong> Amp wraps Claude Code underneath, setting both <code>AMP_CURRENT_THREAD_ID</code> and <code>CLAUDECODE=1</code>. Checking Claude Code first resulted in false attribution.</li>
+        <li><strong>Fork Ecosystems:</strong> Kilo Code runs as a fork of OpenCode, setting both <code>KILO=1</code> and <code>OPENCODE=1</code>.</li>
+        <li><strong>Legacy Variables:</strong> Tools utilizing legacy <code>AGENT</code> variables instead of standard <code>AI_AGENT</code> were completely ignored.</li>
+        <li><strong>Missed Modern Agents:</strong> Emerging agents such as Google Antigravity, Amazon Q Developer CLI, Augment, Cline, Goose, JetBrains Junie, Qwen Code, Trae, and Warp possessed zero detection markers.</li>
+      </ul>
+
+      <h2>The Architectural Solution in MR !4459</h2>
+      <p>
+        In Merge Request <code>!4459</code>, we overhauled <code>internal/api/coding_agent.go</code>:
+      </p>
+
+      <h3>1. Robust Precedence Chains</h3>
+      <pre><code>// Precedence: Amp runs Claude Code underneath, so check Amp first
+if os.Getenv("AMP_CURRENT_THREAD_ID") != "" {
+    return "amp"
+}
+if os.Getenv("CLAUDECODE") == "1" {
+    return "claude-code"
+}
+
+// Kilo wraps OpenCode, so check Kilo first
+if os.Getenv("KILO") == "1" {
+    return "kilo"
+}
+if os.Getenv("OPENCODE") == "1" {
+    return "opencode"
+}</code></pre>
+
+      <h3>2. Expanded Signatures</h3>
+      <p>
+        We incorporated precise signatures for newly adopted industry agents:
+      </p>
+      <ul>
+        <li><code>ANTIGRAVITY_AGENT</code> &rarr; <code>"antigravity"</code></li>
+        <li><code>AWS_EXECUTION_ENV</code> matching <code>AmazonQ-For-CLI</code> &rarr; <code>"amazon-q"</code></li>
+        <li><code>AUGMENT_AGENT=1</code> &rarr; <code>"augment"</code></li>
+        <li><code>CLINE_ACTIVE=true</code> &rarr; <code>"cline"</code></li>
+        <li><code>GOOSE_TERMINAL=1</code> &rarr; <code>"goose"</code></li>
+        <li><code>JUNIE_SHIM_PATH</code> &rarr; <code>"junie"</code></li>
+        <li><code>QWEN_CODE=1</code> &rarr; <code>"qwen-code"</code></li>
+        <li><code>TRAE_AI_SHELL_ID</code> &rarr; <code>"trae"</code></li>
+        <li><code>OZ_RUN_ID</code> &rarr; <code>"warp"</code></li>
+      </ul>
+
+      <h3>3. 25-Case Table-Driven Unit Test Suite</h3>
+      <p>
+        To prevent regression across 29 environment variables, we engineered an isolated test harness in <code>internal/api/coding_agent_test.go</code> that clears all agent variables between runs and verifies exact precedence order:
+      </p>
+      <pre><code>func TestDetectCodingAgent_Comprehensive(t *testing.T) {
+    tests := []struct {
+        name     string
+        env      map[string]string
+        expected string
+    }{
+        {
+            name: "Amp overrides Claude Code",
+            env: map[string]string{
+                "AMP_CURRENT_THREAD_ID": "thread_abc",
+                "CLAUDECODE":            "1",
+            },
+            expected: "amp",
+        },
+        // 24 additional exhaustive cases...
+    }
+}</code></pre>
+
+      <h2>Key Takeaways for Tool Developers</h2>
+      <ul>
+        <li><strong>Hierarchical Awareness:</strong> Never assume agent environments are mutually exclusive. Always evaluate child or wrapper tools prior to parent runtimes.</li>
+        <li><strong>Strict Sanitization:</strong> Fallback variables must be validated against token regexes to reject invalid boolean flags like <code>1</code> or <code>true</code>.</li>
+        <li><strong>Hermetic Test Cleansing:</strong> Test suites evaluating process environment variables must scrub all potential candidate variables to avoid flaky test executions across diverse CI runner environments.</li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Amir Tahani. Published as part of open-source contributions to GitLab infrastructure.</p>
+    </footer>
+  </div>
+</body>
+</html>
